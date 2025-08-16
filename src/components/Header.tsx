@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { siteConfig } from '@/config/site';
 import EmergencyCTA from '@/components/EmergencyCTA';
@@ -21,8 +22,14 @@ export default function Header() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <Link href="/" className="text-xl sm:text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                  {siteConfig.company.name}
+                <Link href="/" className="hover:opacity-80 transition-opacity">
+                  <Image
+                    src="/locksmith-yorkshire400.png"
+                    alt={`${siteConfig.company.name} Logo`}
+                    width={400}
+                    height={48}
+                    className="h-8 w-auto sm:h-10 md:h-12"
+                  />
                 </Link>
               </div>
             </div>
