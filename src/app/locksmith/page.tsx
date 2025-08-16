@@ -81,15 +81,15 @@ export default function LocksmithCitiesPage() {
         </div>
       </section>
 
-      {/* Cities by County */}
+      {/* Service Locations */}
       <section id="cities" className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-bold text-gray-900 mb-4 fluid-section-title">
-              Locksmith Services by County
+              Our Service Locations
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto fluid-subtitle">
-              Professional locksmith services available across all Yorkshire counties
+              Professional locksmith services available across all Yorkshire cities and towns
             </p>
           </div>
 
