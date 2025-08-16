@@ -1,149 +1,174 @@
-'use client';
-import Link from 'next/link';
-import { PhoneIcon, ClockIcon, MapPinIcon, ShieldCheckIcon, KeyIcon, LockClosedIcon, HomeIcon, BuildingOfficeIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
-import LiveChat from '@/components/LiveChat';
-import EmergencyCTA from '@/components/EmergencyCTA';
-import TrustBadges from '@/components/TrustBadges';
-import LeadCapture from '@/components/LeadCapture';
-import AdvertiseBlock from '@/components/AdvertiseBlock';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getCityBySlug, getAllCities, type CityData } from '@/config/cities';
+import { loadCityOverrides, mergeCityWithOverrides } from '@/lib/sponsorOverrides';
 import { siteConfig } from '@/config/site';
+import { PhoneIcon, ClockIcon, MapPinIcon, ShieldCheckIcon, KeyIcon, LockClosedIcon, HomeIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
+import AdvertiseBlock from '@/components/AdvertiseBlock';
+import SponsorBlock from '@/components/SponsorBlock';
+import FeaturedListings from '@/components/FeaturedListings';
+import Header from '@/components/Header';
 
-export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { company, contact, services, leadGen } = siteConfig;
+interface CityPageProps {
+  params: Promise<{
+    city: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  const cities = getAllCities();
+  return cities.map((city) => ({
+    city: city.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: CityPageProps): Promise<Metadata> {
+  const { city: citySlug } = await params;
+  const city = getCityBySlug(citySlug);
+  
+  if (!city) {
+    return {
+      title: 'City Not Found',
+    };
+  }
+
+  return {
+    title: city.seo.title,
+    description: city.seo.description,
+    keywords: city.seo.keywords,
+    openGraph: {
+      title: city.seo.title,
+      description: city.seo.description,
+      type: 'website',
+    },
+    alternates: {
+      canonical: `https://www.locksmithyorkshire.co.uk/locksmith/${city.slug}`,
+    },
+  };
+}
+
+function haversineDistanceKm(a: CityData, b: CityData): number {
+  const toRad = (v: number) => (v * Math.PI) / 180;
+  const R = 6371;
+  const dLat = toRad(b.coordinates.lat - a.coordinates.lat);
+  const dLon = toRad(b.coordinates.lng - a.coordinates.lng);
+  const lat1 = toRad(a.coordinates.lat);
+  const lat2 = toRad(b.coordinates.lat);
+  const h =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1) * Math.cos(lat2) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function getNearbyCities(current: CityData, limit = 6, radiusKm = 60): CityData[] {
+  const others = getAllCities().filter((c) => c.slug !== current.slug);
+  const withDistance = others
+    .map((c) => ({ city: c, dist: haversineDistanceKm(current, c) }))
+    .filter((x) => x.dist <= radiusKm)
+    .sort((a, b) => a.dist - b.dist)
+    .slice(0, limit)
+    .map((x) => x.city);
+  return withDistance;
+}
+
+function JsonLd({ data }: { data: Record<string, unknown> }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export default async function CityPage({ params }: CityPageProps) {
+  const { city: citySlug } = await params;
+  const baseCity = getCityBySlug(citySlug)!;
+  const overrides = await loadCityOverrides();
+  const city = mergeCityWithOverrides(baseCity, overrides[citySlug]);
+  const { contact, services } = siteConfig;
+
+  if (!city) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen">
-      {/* Organization & WebSite JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: company.fullName,
-            url: 'https://www.locksmithyorkshire.co.uk/',
-            sameAs: [
-              siteConfig.social.facebook,
-              siteConfig.social.twitter,
-              siteConfig.social.instagram,
-              siteConfig.social.linkedin,
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: company.fullName,
-            url: 'https://www.locksmithyorkshire.co.uk/',
-            potentialAction: {
-              '@type': 'SearchAction',
-              target: 'https://www.locksmithyorkshire.co.uk/search?q={search_term_string}',
-              'query-input': 'required name=search_term_string',
-            },
-          }),
-        }}
-      />
-      {/* Emergency CTA Banner */}
-      <EmergencyCTA />
-
       {/* Header */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">{company.name}</h1>
-              </div>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <nav className="flex space-x-8">
-                <a href="#services" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Services</a>
-                <a href="#about" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
-                <a href="#contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
-              </nav>
-            </div>
-            
-            <div className="flex items-center space-x-4">
-              {/* Desktop Emergency Button */}
-              <a href={`tel:${contact.emergency.phone}`} className="hidden sm:inline-flex bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-700 transition-colors">
-                <PhoneIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1" />
-                <span className="hidden sm:inline">Emergency: {contact.emergency.display}</span>
-                <span className="sm:hidden">Call Now</span>
-              </a>
-              
-              {/* Mobile menu button */}
-              <button
-                type="button"
-                className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                <span className="sr-only">Open main menu</span>
-                {mobileMenuOpen ? (
-                  <XMarkIcon className="block h-6 w-6" />
-                ) : (
-                  <Bars3Icon className="block h-6 w-6" />
-                )}
-              </button>
-            </div>
-          </div>
-          
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a
-                  href="#services"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Services
-                </a>
-                <a
-                  href="#about"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  About
-                </a>
-                <a
-                  href="#contact"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contact
-                </a>
-                <a
-                  href={`tel:${contact.emergency.phone}`}
-                  className="block px-3 py-2 text-base font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <PhoneIcon className="h-4 w-4 inline mr-2" />
-                  Emergency Call
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
-
+      <Header />
+      
+      <div className="min-h-screen">
+      {/* JSON-LD */}
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: siteConfig.company.name,
+          url: `https://www.locksmithyorkshire.co.uk/locksmith/${city.slug}`,
+          telephone: contact.emergency.display,
+          areaServed: city.name,
+          address: {
+            '@type': 'PostalAddress',
+            addressRegion: city.county,
+            addressCountry: 'UK',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: city.coordinates.lat,
+            longitude: city.coordinates.lng,
+          },
+          openingHours: ['Mo-Su 00:00-23:59'],
+          priceRange: '££',
+          sameAs: [
+            siteConfig.social.facebook,
+            siteConfig.social.twitter,
+            siteConfig.social.instagram,
+            siteConfig.social.linkedin,
+          ],
+          makesOffer: [
+            {
+              '@type': 'Offer',
+              itemOffered: { '@type': 'Service', name: services.emergency.name },
+            },
+          ],
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://www.locksmithyorkshire.co.uk/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Locksmith',
+              item: 'https://www.locksmithyorkshire.co.uk/locksmith',
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: city.name,
+              item: `https://www.locksmithyorkshire.co.uk/locksmith/${city.slug}`,
+            },
+          ],
+        }}
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="font-bold mb-4 sm:mb-6 fluid-hero-title">
-                Professional Locksmith Services
+                {city.seo.h1}
               </h1>
               <p className="mb-6 sm:mb-8 text-blue-100 fluid-subtitle">
-                {company.description}
+                Professional locksmith services in {city.name} available 24/7. Emergency lockout, residential and commercial security solutions with fast response times.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href={`tel:${contact.emergency.phone}`} className="bg-white text-blue-600 px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
@@ -153,14 +178,11 @@ export default function Home() {
                 <a href="#services" className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
                   Our Services
                 </a>
-                <Link href="/locksmith" className="border-2 border-white text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center">
-                  All Cities
-                </Link>
               </div>
             </div>
             <div className="relative">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-semibold mb-4">Why Choose {company.name}?</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4">Why Choose Locksmith Yorkshire in {city.name}?</h3>
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center">
                     <ClockIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-3 text-blue-200 flex-shrink-0" />
@@ -172,7 +194,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center">
                     <MapPinIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-3 text-blue-200 flex-shrink-0" />
-                    <span className="text-sm sm:text-base">Local & Reliable</span>
+                    <span className="text-sm sm:text-base">Local to {city.name}</span>
                   </div>
                   <div className="flex items-center">
                     <KeyIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-3 text-blue-200 flex-shrink-0" />
@@ -185,18 +207,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Badges Section */}
-      <TrustBadges />
-
       {/* Services Section */}
       <section id="services" className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-bold text-gray-900 mb-4 fluid-section-title">
-              Our Professional Services
+              Locksmith Services in {city.name}
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto px-4 fluid-subtitle">
-              We provide comprehensive locksmith services for residential and commercial properties
+              Professional locksmith services for {city.name} and surrounding areas
             </p>
           </div>
 
@@ -306,21 +325,16 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <h2 className="font-bold text-gray-900 mb-6 fluid-section-title">
-                About {company.name}
+                Locksmith Services in {city.name}
               </h2>
-              <p className="text-gray-600 mb-6 fluid-body">
-                With over {company.experience} years of experience in the locksmith industry, {company.name} has been providing 
-                reliable, professional, and affordable locksmith services to residential and commercial clients 
-                throughout the UK.
-              </p>
-              <p className="text-gray-600 mb-6 fluid-body">
-                Our team of certified locksmiths is available 24/7 to handle any emergency situation, 
-                from lockouts to broken keys. We pride ourselves on our quick response times, 
-                competitive pricing, and commitment to customer satisfaction.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 text-gray-600 fluid-body">
+                {city.seo.content.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">{company.experience}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">15+</div>
                   <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
                 </div>
                 <div className="text-center">
@@ -328,17 +342,91 @@ export default function Home() {
                   <div className="text-xs sm:text-sm text-gray-600">Emergency Service</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">{company.customers}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">1000+</div>
                   <div className="text-xs sm:text-sm text-gray-600">Happy Customers</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">{company.responseTime}</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-blue-600">15min</div>
                   <div className="text-xs sm:text-sm text-gray-600">Response Time</div>
                 </div>
               </div>
+              {/* Postcodes Coverage */}
+              {city.postcodes && city.postcodes.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Postcodes We Cover in {city.name}</h3>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-sm text-gray-600 mb-3">
+                      Our {city.name} locksmith service covers all local postcodes:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {city.postcodes.map((postcode) => (
+                        <span key={postcode} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
+                          {postcode}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Local Landmarks */}
+              {city.landmarks && city.landmarks.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Key Locations in {city.name}</h3>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-sm text-gray-600 mb-3">
+                      We provide rapid locksmith response near these {city.name} landmarks:
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {city.landmarks.map((landmark) => (
+                        <li key={landmark} className="flex items-center text-sm">
+                          <MapPinIcon className="h-4 w-4 text-blue-600 mr-2 flex-shrink-0" />
+                          {landmark}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Neighborhoods */}
+              {city.neighborhoods && city.neighborhoods.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Areas of {city.name} We Serve</h3>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-sm text-gray-600 mb-3">
+                      Local locksmith services across all {city.name} neighborhoods:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {city.neighborhoods.map((neighborhood) => (
+                        <span key={neighborhood} className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                          {neighborhood}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Nearby Areas */}
+              <div className="mt-10">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">Nearby areas we also cover</h3>
+                <ul className="flex flex-wrap gap-2">
+                  {getNearbyCities(city).map((nearby) => (
+                    <li key={nearby.slug}>
+                      <a
+                        className="text-blue-600 hover:text-blue-700 underline text-sm"
+                        href={`/locksmith/${nearby.slug}`}
+                      >
+                        Locksmith {nearby.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="bg-white rounded-lg p-6 sm:p-8 shadow-lg">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Why Choose Us?</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Why Choose Us in {city.name}?</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
@@ -347,6 +435,15 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Licensed & Insured</h4>
                     <p className="text-gray-600 text-xs sm:text-sm">All our locksmiths are fully licensed and insured for your peace of mind.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Local to {city.name}</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">Local locksmiths you can trust, available when you need us most.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -367,15 +464,6 @@ export default function Home() {
                     <p className="text-gray-600 text-xs sm:text-sm">All our work comes with a comprehensive guarantee.</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Local & Reliable</h4>
-                    <p className="text-gray-600 text-xs sm:text-sm">Local locksmiths you can trust, available when you need us most.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -386,11 +474,11 @@ export default function Home() {
       <section id="contact" className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Contact Us
+            <h2 className="font-bold text-gray-900 mb-4 fluid-section-title">
+              Contact Locksmith Yorkshire in {city.name}
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600">
-              Get in touch for professional locksmith services
+            <p className="text-gray-600 fluid-subtitle">
+              Get in touch for professional locksmith services in {city.name}
             </p>
           </div>
 
@@ -416,13 +504,13 @@ export default function Home() {
                   <MapPinIcon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Service Area</p>
-                    <p className="text-gray-600 text-sm sm:text-base">{contact.service.area}</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{city.name} and surrounding areas</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 sm:mt-8">
-                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Emergency Services Available:</h4>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">Emergency Services Available in {city.name}:</h4>
                 <ul className="space-y-2 text-gray-600 text-sm sm:text-base">
                   <li>• Locked out of home or car</li>
                   <li>• Broken key extraction</li>
@@ -434,35 +522,12 @@ export default function Home() {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Request a Quote</h3>
-              <form
-                className="space-y-4"
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget as HTMLFormElement;
-                  const formData = new FormData(form);
-                  const payload = Object.fromEntries(formData.entries());
-                  await fetch('/api/lead', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                      name: payload.name,
-                      email: payload.email,
-                      phone: payload.phone,
-                      service: payload.service,
-                      message: payload.message,
-                      source: 'home-contact-form',
-                      pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-                      referrer: typeof document !== 'undefined' ? document.referrer : '',
-                      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : '',
-                      timeToSubmitSec: null,
-                      honeypot: payload.website || '',
-                    }),
-                  });
-                }}
-              >
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Request a Quote for {city.name}</h3>
+              <form className="space-y-4" action="/api/lead" method="post">
                 {/* Honeypot */}
-                <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
+                <input type="text" name="honeypot" className="hidden" tabIndex={-1} autoComplete="off" />
+                <input type="hidden" name="source" value="city-contact-form" />
+                <input type="hidden" name="city" value={city.name} />
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name
@@ -541,72 +606,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Monetization: Advertise for businesses */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <AdvertiseBlock />
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold mb-4">{company.name}</h3>
-              <p className="text-gray-400 mb-4 text-sm sm:text-base">
-                {company.tagline}
-              </p>
-              <div className="flex space-x-4">
-                <a href={`tel:${contact.emergency.phone}`} className="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-blue-700 transition-colors">
-                  Emergency Call
-                </a>
-              </div>
-            </div>
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-                <li><a href="#services" className="hover:text-white transition-colors">{services.emergency.name}</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">{services.residential.name}</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">{services.commercial.name}</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">{services.installation.name}</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">{services.keyCutting.name}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-                <li>Emergency: {contact.emergency.display}</li>
-                <li>Service: {contact.service.hours}</li>
-                <li>Area: {contact.service.area}</li>
-                <li>Licensed & Insured</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold mb-4">Emergency Services</h4>
-              <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-                <li>• Locked out of home</li>
-                <li>• Locked out of car</li>
-                <li>• Broken key extraction</li>
-                <li>• Emergency lock replacement</li>
-                <li>• Security system issues</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm sm:text-base">
-            <p>&copy; 2024 {company.name}. All rights reserved. Licensed and insured locksmith services.</p>
-          </div>
+        {/* Monetization: Sponsor / Featured / Advertise */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <SponsorBlock city={city} />
+          <FeaturedListings city={city} />
+          {/* Hide Advertise block when a sponsor is active */}
+          {!city.sponsor?.active && <AdvertiseBlock city={city.name} />}
         </div>
-      </footer>
-
-      {/* Lead Generation Components */}
-      <LiveChat />
-      
-      {/* Exit Intent Lead Capture */}
-      <LeadCapture
-        type="exit-intent"
-        title={leadGen.exitIntent.title}
-        subtitle={leadGen.exitIntent.subtitle}
-        offer={leadGen.exitIntent.offer}
-      />
+      </div>
     </div>
   );
-}
+} 

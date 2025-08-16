@@ -8,8 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +21,178 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom animations for lead generation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.5s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Emergency CTA specific styles */
+.emergency-cta {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Trust badge hover effects */
+.trust-badge:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Lead capture form focus effects */
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* Chat notification badge */
+.chat-badge {
+  animation: bounce 2s infinite;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .text-responsive {
+    font-size: 1rem;
+  }
+}
+
+/* Loading states */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Fluid typography (font clamping) */
+/* Use these utility classes to get smooth scaling across all breakpoints */
+.fluid-hero-title {
+  font-size: clamp(2rem, 1.2rem + 3.5vw, 4rem);
+  line-height: 1.1;
+}
+
+.fluid-section-title {
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.fluid-subtitle {
+  font-size: clamp(1rem, 0.9rem + 0.8vw, 1.5rem);
+  line-height: 1.35;
+}
+
+.fluid-body {
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem);
+  line-height: 1.6;
+}
+
+.fluid-small {
+  font-size: clamp(0.85rem, 0.82rem + 0.2vw, 1rem);
+  line-height: 1.45;
+}
+
+.fluid-cta {
+  font-size: clamp(0.95rem, 0.9rem + 0.4vw, 1.125rem);
+  line-height: 1.2;
 }

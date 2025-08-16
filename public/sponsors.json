@@ -1,0 +1,17 @@
+{
+  "leeds": {
+    "sponsor": {
+      "active": false,
+      "name": "",
+      "url": "",
+      "phone": "",
+      "displayPhone": "",
+      "address": "",
+      "rating": null,
+      "reviews": null,
+      "since": "",
+      "description": ""
+    },
+    "featuredListings": []
+  }
+}
