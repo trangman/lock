@@ -58,8 +58,8 @@ export default function LiveChat() {
     if (notificationPermission === 'granted' && !isOpen) {
       new Notification(title, {
         body,
-        icon: '/favicon.ico',
-        badge: '/favicon.ico',
+        icon: '/favicon.png',
+        badge: '/favicon.png',
         tag: 'locksmith-yorkshire-chat',
         requireInteraction: false,
         silent: false

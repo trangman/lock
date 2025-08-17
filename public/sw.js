@@ -11,7 +11,7 @@ const STATIC_URLS = [
   '/locksmith-yorkshire400.png',
   '/headers/default.webp',
   '/manifest.json',
-  '/favicon.ico',
+      '/favicon.png',
 ];
 
 // Dynamic routes to cache on first visit

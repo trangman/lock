@@ -104,9 +104,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/leeds"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/leeds/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Headingley", "Chapel Allerton", "Roundhay", "Meanwood", "Adel"]
     }
   },
@@ -150,9 +150,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.southyorkshire.police.uk/your-area/sheffield"
+        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/sheffield/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Ecclesall", "Broomhill", "Nether Edge", "Crookes", "Walkley"]
     }
   },
@@ -196,9 +196,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/bradford"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/bradford-city/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/bradford/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/bradford-city/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Heaton", "Shipley", "Saltaire", "Bingley", "Keighley"]
     }
   },
@@ -242,9 +242,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.humberside.police.uk/your-area/hull"
+        website: "https://www.police.uk/pu/your-area/humberside-police/kingston-upon-hull/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/kingston-upon-hull/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/humberside-police/kingston-upon-hull/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Anlaby", "Cottingham", "Hessle", "Willerby", "Kirk Ella"]
     }
   },
@@ -288,9 +288,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.northyorkshire.police.uk/your-area/york"
+        website: "https://www.police.uk/pu/your-area/north-yorkshire-police/york/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/york/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/north-yorkshire-police/york/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Clifton", "Acomb", "Heworth", "Fulford", "Bishopthorpe"]
     }
   },
@@ -326,9 +326,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/wakefield"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/wakefield/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/wakefield/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/wakefield/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Wakefield City Centre", "Ossett", "Horbury", "Pontefract", "Castleford"]
     }
   },
@@ -364,9 +364,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.southyorkshire.police.uk/your-area/doncaster"
+        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/doncaster/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/doncaster/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/doncaster/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Doncaster City Centre", "Bentley", "Edenthorpe", "Bessacarr", "Cantley"]
     }
   },
@@ -402,9 +402,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.southyorkshire.police.uk/your-area/rotherham"
+        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/rotherham/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/rotherham/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/rotherham/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Rotherham Town Centre", "Maltby", "Wickersley", "Bramley", "Swinton"]
     }
   },
@@ -440,9 +440,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.southyorkshire.police.uk/your-area/barnsley"
+        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/barnsley/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/barnsley/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/barnsley/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Barnsley Town Centre", "Wombwell", "Hoyland", "Penistone", "Cudworth"]
     }
   },
@@ -478,9 +478,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/halifax"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/halifax/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/halifax/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/halifax/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Halifax Town Centre", "Sowerby Bridge", "Todmorden", "Hebden Bridge", "Mytholmroyd"]
     }
   },
@@ -516,9 +516,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/huddersfield"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/huddersfield/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/huddersfield/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/huddersfield/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Huddersfield Town Centre", "Lindley", "Golcar", "Slaithwaite", "Marsden"]
     }
   },
@@ -554,9 +554,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.northyorkshire.police.uk/your-area/scarborough"
+        website: "https://www.police.uk/pu/your-area/north-yorkshire-police/scarborough/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/scarborough/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/north-yorkshire-police/scarborough/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Scarborough Town Centre", "North Bay", "South Bay", "Falsgrave", "Newby"]
     }
   },
@@ -592,9 +592,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.northyorkshire.police.uk/your-area/harrogate"
+        website: "https://www.police.uk/pu/your-area/north-yorkshire-police/harrogate/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/harrogate/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/north-yorkshire-police/harrogate/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Harrogate Town Centre", "Bilton", "Starbeck", "Knaresborough", "Pannal"]
     }
   },
@@ -630,9 +630,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.humberside.police.uk/your-area/beverley"
+        website: "https://www.police.uk/pu/your-area/humberside-police/beverley/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/beverley/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/humberside-police/beverley/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Beverley Town Centre", "Molescroft", "Tickton", "Leconfield", "Walkington"]
     }
   },
@@ -668,9 +668,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/pontefract"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/pontefract/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/pontefract/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/pontefract/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Pontefract Town Centre", "Carleton", "Chequerfield", "Tanshelf", "Monkhill"]
     }
   },
@@ -706,9 +706,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/dewsbury"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/dewsbury/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/dewsbury/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/dewsbury/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Dewsbury Town Centre", "Earlsheaton", "Thornhill", "Savoury", "Shaw Cross"]
     }
   },
@@ -744,9 +744,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/batley"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/batley/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/batley/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/batley/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Batley Town Centre", "Carlinghow", "Healey", "Soothill", "Upper Batley"]
     }
   },
@@ -782,9 +782,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/keighley"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/keighley/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/keighley/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/keighley/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Keighley Town Centre", "Eastburn", "Steeton", "Silsden", "Cross Roads"]
     }
   },
@@ -820,9 +820,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.westyorkshire.police.uk/your-area/castleford"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/castleford/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/castleford/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/castleford/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Castleford Town Centre", "Glasshoughton", "Whitwood", "Airedale", "Fryston"]
     }
   },
@@ -858,9 +858,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.northyorkshire.police.uk/your-area/selby"
+        website: "https://www.police.uk/pu/your-area/north-yorkshire-police/selby/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/selby/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/north-yorkshire-police/selby/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Selby Town Centre", "Barlby", "Brayton", "Riccall", "Cawood"]
     }
   },
@@ -896,9 +896,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.humberside.police.uk/your-area/goole"
+        website: "https://www.police.uk/pu/your-area/humberside-police/goole/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/goole/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/humberside-police/goole/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Goole Town Centre", "Boothferry", "Hook", "Airmyn", "Rawcliffe"]
     }
   },
@@ -934,9 +934,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.humberside.police.uk/your-area/driffield"
+        website: "https://www.police.uk/pu/your-area/humberside-police/driffield/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/driffield/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/humberside-police/driffield/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Driffield Town Centre", "Nafferton", "Wetwang", "Sledmere", "Bainton"]
     }
   },
@@ -972,9 +972,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.humberside.police.uk/your-area/bridlington"
+        website: "https://www.police.uk/pu/your-area/humberside-police/bridlington/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/bridlington/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/humberside-police/bridlington/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Bridlington Town Centre", "North Bay", "South Bay", "Flamborough", "Bempton"]
     }
   },
@@ -1010,9 +1010,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.northyorkshire.police.uk/your-area/whitby"
+        website: "https://www.police.uk/pu/your-area/north-yorkshire-police/whitby/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/whitby/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/north-yorkshire-police/whitby/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Whitby Town Centre", "West Cliff", "East Cliff", "Sandsend", "Robin Hood's Bay"]
     }
   },
@@ -1048,9 +1048,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.cleveland.police.uk/your-area/middlesbrough"
+        website: "https://www.police.uk/pu/your-area/cleveland-police/middlesbrough/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/area/your-area/cleveland-police/middlesbrough/",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/cleveland-police/middlesbrough/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Middlesbrough Town Centre", "Acklam", "Linthorpe", "Marton", "Nunthorpe"]
     }
   }
