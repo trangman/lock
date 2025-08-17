@@ -60,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFreq: 'monthly' as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/blog/key-cutting-services-guide`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.7,
+    },
   ];
 
   // City-specific pages with medium-high priority
