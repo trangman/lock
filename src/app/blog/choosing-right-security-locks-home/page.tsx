@@ -20,6 +20,92 @@ export const metadata: Metadata = {
 export default function SecurityLocksArticle() {
   return (
     <div className="min-h-screen">
+      {/* Article Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Choosing the Right Security Locks for Your Home - Complete Guide',
+            description: 'Discover the best types of locks for maximum home security. From traditional mortise locks to modern smart locks, find what\'s right for your property with expert advice.',
+            image: 'https://www.locksmithyorkshire.co.uk/headers/default.webp',
+            author: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              url: 'https://www.locksmithyorkshire.co.uk/'
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.locksmithyorkshire.co.uk/locksmith-yorkshire400.png'
+              }
+            },
+            datePublished: '2024-12-14',
+            dateModified: '2024-12-14',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://www.locksmithyorkshire.co.uk/blog/choosing-right-security-locks-home'
+            },
+            articleSection: 'Home Security',
+            keywords: 'home security locks, best locks for home, mortise locks, smart locks, home security, security locks yorkshire, lock installation',
+            about: [
+              {
+                '@type': 'Service',
+                name: 'Residential Locksmith Services',
+                description: 'Complete home security solutions including lock installation and repair'
+              }
+            ],
+            offers: {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Residential Locksmith',
+                description: 'Professional lock installation and security solutions for homes'
+              },
+              areaServed: 'Yorkshire',
+              availableChannel: {
+                '@type': 'ServiceChannel',
+                servicePhone: '0800-123-4567'
+              }
+            }
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.locksmithyorkshire.co.uk/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://www.locksmithyorkshire.co.uk/blog'
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Security Locks Guide',
+                item: 'https://www.locksmithyorkshire.co.uk/blog/choosing-right-security-locks-home'
+              }
+            ]
+          }),
+        }}
+      />
+
       <Header />
       
       {/* Article Header */}

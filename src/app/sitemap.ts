@@ -1,60 +1,131 @@
 import { MetadataRoute } from 'next';
-import { generateSitemapData, getAllCities } from '@/config/cities';
+import { getAllCities } from '@/config/cities';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.locksmithyorkshire.co.uk';
-  const cityPages = generateSitemapData();
+  const baseUrl = 'https://www.locksmithyorkshire.co.uk';
   const cities = getAllCities();
-  
-  const staticPages = [
+  const currentDate = new Date();
+
+  // Base pages with high priority
+  const basePages = [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFreq: 'weekly',
-      priority: 1,
+      url: `${baseUrl}/`,
+      lastModified: currentDate,
+      changeFreq: 'daily' as const,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/locksmith`,
-      lastModified: new Date(),
-      changeFreq: 'weekly',
+      lastModified: currentDate,
+      changeFreq: 'weekly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFreq: 'weekly',
+      lastModified: currentDate,
+      changeFreq: 'weekly' as const,
       priority: 0.8,
     },
+  ];
+
+  // Blog articles with medium priority
+  const blogArticles = [
     {
       url: `${baseUrl}/blog/emergency-lockout-what-to-do`,
-      lastModified: new Date(),
-      changeFreq: 'monthly',
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog/choosing-right-security-locks-home`,
-      lastModified: new Date(),
-      changeFreq: 'monthly',
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog/car-lockout-solutions-prevention-emergency`,
-      lastModified: new Date(),
-      changeFreq: 'monthly',
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
       priority: 0.7,
     },
   ];
 
-  const citySitemapEntries = cityPages.map((city) => {
-    const cityData = cities.find((c) => c.slug === city.slug);
-    const lastModIso = cityData?.updatedAt ?? city.lastmod;
-    return {
-      url: `${baseUrl}/locksmith/${city.slug}`,
-      lastModified: new Date(lastModIso),
-      changeFreq: city.changefreq,
-      priority: city.priority,
-    };
-  });
+  // City-specific pages with medium-high priority
+  const cityPages = cities.map((city) => ({
+    url: `${baseUrl}/locksmith/${city.slug}`,
+    lastModified: currentDate,
+    changeFreq: 'weekly' as const,
+    priority: 0.8,
+  }));
 
-  return [...staticPages, ...citySitemapEntries];
+  // Service-specific landing pages (via rewrites)
+  const servicePages = [
+    {
+      url: `${baseUrl}/emergency-locksmith`,
+      lastModified: currentDate,
+      changeFreq: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/residential-locksmith`,
+      lastModified: currentDate,
+      changeFreq: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/commercial-locksmith`,
+      lastModified: currentDate,
+      changeFreq: 'weekly' as const,
+      priority: 0.8,
+    },
+  ];
+
+  // Important static pages
+  const staticPages = [
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/accessibility`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.5,
+    },
+  ];
+
+  // Combine all pages
+  return [
+    ...basePages,
+    ...blogArticles,
+    ...cityPages,
+    ...servicePages,
+    ...staticPages,
+  ];
 } 

@@ -93,6 +93,93 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen">
+      {/* Blog Collection Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Locksmith Blog & Security Advice',
+            description: 'Expert insights on home security, emergency procedures, and professional locksmith services. Stay informed with the latest security tips and industry knowledge.',
+            url: 'https://www.locksmithyorkshire.co.uk/blog',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.locksmithyorkshire.co.uk/locksmith-yorkshire400.png'
+              }
+            },
+            mainEntity: {
+              '@type': 'ItemList',
+              name: 'Locksmith Articles',
+              description: 'Collection of expert locksmith advice and security tips',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  item: {
+                    '@type': 'Article',
+                    headline: 'Emergency Lockout? Here\'s What to Do',
+                    url: 'https://www.locksmithyorkshire.co.uk/blog/emergency-lockout-what-to-do',
+                    author: 'Locksmith Yorkshire',
+                    datePublished: '2024-12-15'
+                  }
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  item: {
+                    '@type': 'Article',
+                    headline: 'Choosing the Right Security Locks for Your Home',
+                    url: 'https://www.locksmithyorkshire.co.uk/blog/choosing-right-security-locks-home',
+                    author: 'Locksmith Yorkshire',
+                    datePublished: '2024-12-14'
+                  }
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  item: {
+                    '@type': 'Article',
+                    headline: 'Car Lockout Solutions: Prevention and Emergency Help',
+                    url: 'https://www.locksmithyorkshire.co.uk/blog/car-lockout-solutions-prevention-emergency',
+                    author: 'Locksmith Yorkshire',
+                    datePublished: '2024-12-13'
+                  }
+                }
+              ]
+            }
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.locksmithyorkshire.co.uk/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://www.locksmithyorkshire.co.uk/blog'
+              }
+            ]
+          }),
+        }}
+      />
+
       <Header />
       
       {/* Hero Section */}

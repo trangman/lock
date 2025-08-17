@@ -20,6 +20,92 @@ export const metadata: Metadata = {
 export default function EmergencyLockoutArticle() {
   return (
     <div className="min-h-screen">
+      {/* Article Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Emergency Lockout? Here\'s What to Do - Complete Guide',
+            description: 'Find yourself locked out? Don\'t panic! Learn the essential steps to take during an emergency lockout and how to get professional help quickly. Expert advice from Yorkshire locksmiths.',
+            image: 'https://www.locksmithyorkshire.co.uk/headers/default.webp',
+            author: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              url: 'https://www.locksmithyorkshire.co.uk/'
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.locksmithyorkshire.co.uk/locksmith-yorkshire400.png'
+              }
+            },
+            datePublished: '2024-12-15',
+            dateModified: '2024-12-15',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://www.locksmithyorkshire.co.uk/blog/emergency-lockout-what-to-do'
+            },
+            articleSection: 'Emergency Services',
+            keywords: 'emergency lockout, locked out, what to do when locked out, emergency locksmith, lockout help, emergency locksmith yorkshire',
+            about: [
+              {
+                '@type': 'Service',
+                name: 'Emergency Locksmith Services',
+                description: '24/7 emergency locksmith services for lockouts and urgent security needs'
+              }
+            ],
+            offers: {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Emergency Locksmith',
+                description: '24/7 emergency locksmith services across Yorkshire'
+              },
+              areaServed: 'Yorkshire',
+              availableChannel: {
+                '@type': 'ServiceChannel',
+                servicePhone: '0800-123-4567'
+              }
+            }
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.locksmithyorkshire.co.uk/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://www.locksmithyorkshire.co.uk/blog'
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Emergency Lockout Guide',
+                item: 'https://www.locksmithyorkshire.co.uk/blog/emergency-lockout-what-to-do'
+              }
+            ]
+          }),
+        }}
+      />
+
       <Header />
       
       {/* Article Header */}

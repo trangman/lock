@@ -33,6 +33,91 @@ export default function LocksmithCitiesPage() {
     <div className="min-h-screen">
       {/* Header */}
       <Header />
+
+      {/* Service Locations Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Locksmith Service Locations',
+            description: 'Professional locksmith services available across all Yorkshire cities and towns',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                item: {
+                  '@type': 'Place',
+                  name: 'Leeds Locksmith Services',
+                  url: 'https://www.locksmithyorkshire.co.uk/locksmith/leeds',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Leeds',
+                    addressRegion: 'Yorkshire',
+                    addressCountry: 'UK'
+                  }
+                }
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                item: {
+                  '@type': 'Place',
+                  name: 'Sheffield Locksmith Services',
+                  url: 'https://www.locksmithyorkshire.co.uk/locksmith/sheffield',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Sheffield',
+                    addressRegion: 'Yorkshire',
+                    addressCountry: 'UK'
+                  }
+                }
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                item: {
+                  '@type': 'Place',
+                  name: 'Bradford Locksmith Services',
+                  url: 'https://www.locksmithyorkshire.co.uk/locksmith/bradford',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Bradford',
+                    addressRegion: 'Yorkshire',
+                    addressCountry: 'UK'
+                  }
+                }
+              }
+            ]
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.locksmithyorkshire.co.uk/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Service Locations',
+                item: 'https://www.locksmithyorkshire.co.uk/locksmith'
+              }
+            ]
+          }),
+        }}
+      />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">

@@ -20,6 +20,92 @@ export const metadata: Metadata = {
 export default function CarLockoutArticle() {
   return (
     <div className="min-h-screen">
+      {/* Article Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Car Lockout Solutions: Prevention and Emergency Help - Complete Guide',
+            description: 'Learn how to prevent car lockouts and what to do when they happen. Professional automotive locksmith services explained with practical tips and emergency procedures.',
+            image: 'https://www.locksmithyorkshire.co.uk/headers/default.webp',
+            author: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              url: 'https://www.locksmithyorkshire.co.uk/'
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Locksmith Yorkshire',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://www.locksmithyorkshire.co.uk/locksmith-yorkshire400.png'
+              }
+            },
+            datePublished: '2024-12-13',
+            dateModified: '2024-12-13',
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': 'https://www.locksmithyorkshire.co.uk/blog/car-lockout-solutions-prevention-emergency'
+            },
+            articleSection: 'Automotive',
+            keywords: 'car lockout, automotive locksmith, locked keys in car, car key replacement, car locksmith yorkshire, emergency car locksmith',
+            about: [
+              {
+                '@type': 'Service',
+                name: 'Automotive Locksmith Services',
+                description: 'Professional automotive locksmith services for car lockouts and key issues'
+              }
+            ],
+            offers: {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Automotive Locksmith',
+                description: '24/7 automotive locksmith services for emergency car lockouts'
+              },
+              areaServed: 'Yorkshire',
+              availableChannel: {
+                '@type': 'ServiceChannel',
+                servicePhone: '0800-123-4567'
+              }
+            }
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://www.locksmithyorkshire.co.uk/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://www.locksmithyorkshire.co.uk/blog'
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Car Lockout Guide',
+                item: 'https://www.locksmithyorkshire.co.uk/blog/car-lockout-solutions-prevention-emergency'
+              }
+            ]
+          }),
+        }}
+      />
+
       <Header />
       
       {/* Article Header */}

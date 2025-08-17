@@ -1,71 +1,45 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { PhoneIcon, XMarkIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { siteConfig } from '@/config/site';
 
 export default function EmergencyCTA() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
-  const { contact } = siteConfig;
-
-  useEffect(() => {
-    // Show emergency CTA after 3 seconds
-    const timer = setTimeout(() => {
-      if (!isDismissed) {
-        setIsVisible(true);
-      }
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, [isDismissed]);
-
-  const handleDismiss = () => {
-    setIsVisible(false);
-    setIsDismissed(true);
-    // Store dismissal in localStorage
-    localStorage.setItem('emergency-cta-dismissed', 'true');
-  };
-
-  useEffect(() => {
-    // Check if user has dismissed before
-    const dismissed = localStorage.getItem('emergency-cta-dismissed');
-    if (dismissed) {
-      setIsDismissed(true);
-    }
-  }, []);
-
-  if (!isVisible || isDismissed) return null;
-
   return (
-    <div className="fixed top-0 left-0 right-0 bg-red-600 text-white z-50 animate-slideDown">
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <ExclamationTriangleIcon className="h-5 w-5 animate-pulse" />
-            <div>
-              <p className="font-semibold fluid-small">
-                🚨 EMERGENCY LOCKOUT? 
-              </p>
-              <p className="text-red-100 fluid-small">
-                Don&apos;t wait! Call now for immediate assistance
-              </p>
-            </div>
+    <section 
+      className="bg-gradient-to-r from-red-600 to-red-700 text-white py-4"
+      role="banner"
+      aria-label="Emergency locksmith service banner"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <div className="flex items-center mb-2 sm:mb-0">
+            <ExclamationTriangleIcon 
+              className="h-5 w-5 mr-2 text-yellow-300" 
+              aria-hidden="true"
+            />
+            <span className="text-sm font-medium">
+              <span className="sr-only">Emergency Service Available: </span>
+              24/7 Emergency Locksmith Service
+            </span>
           </div>
-          <div className="flex items-center space-x-3">
-            <a href={`tel:${contact.emergency.phone}`} className="bg-white text-red-600 px-4 py-2 rounded-lg font-bold hover:bg-red-50 transition-colors flex items-center space-x-2 fluid-cta">
-              <PhoneIcon className="h-4 w-4" />
-              <span>{contact.emergency.display}</span>
-            </a>
-            <button
-              onClick={handleDismiss}
-              className="text-white hover:text-red-200 transition-colors"
-              aria-label="Dismiss emergency banner"
+          
+          <div className="flex items-center space-x-4">
+            <span className="text-sm">
+              <span className="sr-only">Response time: </span>
+              15-Minute Response Guarantee
+            </span>
+            
+            <a
+              href={`tel:${siteConfig.contact.emergency.phone}`}
+              className="inline-flex items-center px-4 py-2 bg-white text-red-700 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-colors"
+              aria-label={`Emergency locksmith service - Call ${siteConfig.contact.emergency.phone} now`}
             >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
+              <PhoneIcon className="h-4 w-4 mr-2" aria-hidden="true" />
+              <span className="sr-only">Call emergency number: </span>
+              {siteConfig.contact.emergency.phone}
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 } 
