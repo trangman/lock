@@ -151,13 +151,13 @@ export default function SmartLocksArticle() {
               Disadvantages of Traditional Locks
             </h3>
             
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Limited Access Control:</strong> Can&apos;t easily grant temporary access</li>
-              <li><strong>Key Management:</strong> Physical keys can be lost, stolen, or duplicated</li>
-              <strong>No Activity Logs:</strong> Can&apos;t track who enters or when</li>
-              <li><strong>Manual Operation:</strong> Must be physically present to lock/unlock</li>
-              <li><strong>Vulnerability:</strong> Susceptible to lock picking and bumping</li>
-            </ul>
+                            <ul className="list-disc pl-6 mb-6 space-y-2">
+                  <li><strong>Limited Access Control:</strong> Can&apos;t easily grant temporary access</li>
+                  <li><strong>Key Management:</strong> Physical keys can be lost, stolen, or duplicated</li>
+                  <li><strong>No Activity Logs:</strong> Can&apos;t track who enters or when</li>
+                  <li><strong>Manual Operation:</strong> Must be physically present to lock/unlock</li>
+                  <li><strong>Vulnerability:</strong> Susceptible to lock picking and bumping</li>
+                </ul>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <KeyIcon className="h-6 w-6 text-blue-600 mr-3" />
