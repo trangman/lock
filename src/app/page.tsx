@@ -9,6 +9,7 @@ import LeadCapture from '@/components/LeadCapture';
 import AdvertiseBlock from '@/components/AdvertiseBlock';
 import Header from '@/components/Header';
 import { siteConfig } from '@/config/site';
+import { getHeroImage } from '@/config/cities';
 
 export default function Home() {
   const { company, contact, services, leadGen } = siteConfig;
@@ -54,7 +55,19 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={getHeroImage()}
+            alt="Professional Locksmith Services"
+            fill
+            className="object-cover opacity-50"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-blue-700/40"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="font-bold mb-4 sm:mb-6 fluid-hero-title">

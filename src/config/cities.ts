@@ -18,6 +18,8 @@ export interface CityData {
     h1: string;
     content: string[];
   };
+  // Optional: custom hero image (overrides default)
+  heroImage?: string; // path to image in public folder, e.g., "/headers/leeds.webp"
   // Optional: last content update date for stable sitemap lastmod
   updatedAt?: string; // ISO date string, e.g., "2024-12-01"
   // Optional: sponsored locksmith for this city
@@ -587,4 +589,9 @@ export const generateSitemapData = () => {
     changefreq: 'weekly' as const,
     priority: 0.8,
   }));
+};
+
+// Helper function to get hero image with fallback to default
+export const getHeroImage = (city?: CityData): string => {
+  return city?.heroImage || '/headers/default.webp';
 };
