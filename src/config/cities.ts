@@ -104,9 +104,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds/?yourlocalpolicingteam=about-us&tab=overview"
+        website: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds-city/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds/?yourlocalpolicingteam=about-us&tab=crimemap",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/west-yorkshire-police/leeds-city/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Headingley", "Chapel Allerton", "Roundhay", "Meanwood", "Adel"]
     }
   },
@@ -150,9 +150,9 @@ export const yorkshireCities: CityData[] = [
       policeContact: {
         emergency: "999",
         nonEmergency: "101",
-        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield/?yourlocalpolicingteam=about-us&tab=overview"
+        website: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield-city-centre/?yourlocalpolicingteam=about-us&tab=overview"
       },
-      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield/?yourlocalpolicingteam=about-us&tab=crimemap",
+      crimeMapUrl: "https://www.police.uk/pu/your-area/south-yorkshire-police/sheffield-city-centre/?yourlocalpolicingteam=about-us&tab=crimemap",
       neighborhoodWatch: ["Ecclesall", "Broomhill", "Nether Edge", "Crookes", "Walkley"]
     }
   },
