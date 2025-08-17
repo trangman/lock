@@ -179,10 +179,11 @@ export const siteConfig = {
 
   // Performance & Analytics
   analytics: {
-    googleAnalytics: 'GA_MEASUREMENT_ID', // Replace with actual GA ID
-    googleTagManager: 'GTM-XXXXXXX', // Replace with actual GTM ID
-    facebookPixel: 'XXXXXXXXXX', // Replace with actual Facebook Pixel ID
-    hotjar: 'XXXXXXXXXX', // Replace with actual Hotjar ID
+    googleAnalytics: 'GTM-PHCW4M2L', // GTM ID (GA will be configured through GTM)
+    googleTagManager: 'GTM-PHCW4M2L', // Your actual GTM ID
+    facebookPixel: '', // Add if you have a Facebook Pixel ID
+    hotjar: '', // Add if you have a Hotjar ID
+    // Note: Individual tracking codes are configured through Google Tag Manager
   },
 
   // Content Strategy

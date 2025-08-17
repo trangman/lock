@@ -48,6 +48,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFreq: 'monthly' as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/blog/commercial-security-protecting-business`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/smart-locks-vs-traditional-locks`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.7,
+    },
   ];
 
   // City-specific pages with medium-high priority
