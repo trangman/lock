@@ -172,12 +172,12 @@ export const siteConfig = {
 
   // SEO & Meta
   seo: {
-    title: "Locksmith Yorkshire - Professional Locksmith Services",
-    description: "Professional locksmith services in the UK. 24/7 emergency locksmith, residential and commercial security solutions. Fast, reliable, and trusted locksmith services.",
-    keywords: "locksmith, emergency locksmith, residential locksmith, commercial locksmith, security, locks, keys",
+    title: "Emergency Locksmith Yorkshire - 24/7 Lockout Service | Professional Locksmith",
+    description: "24/7 emergency locksmith services across Yorkshire. Locked out? We'll be there in 15 minutes! Professional locksmith in Leeds, Sheffield, Bradford, Hull, York. Licensed, insured, trusted by 1000+ customers.",
+    keywords: "emergency locksmith yorkshire, locksmith leeds, locksmith sheffield, locksmith bradford, locksmith hull, locksmith york, emergency lockout service, 24 hour locksmith, car locksmith, house lockout, broken key extraction, locksmith near me",
     author: "Locksmith Yorkshire",
-    ogTitle: "Locksmith Yorkshire - Professional Locksmith Services",
-    ogDescription: "Professional locksmith services in the UK. 24/7 emergency locksmith, residential and commercial security solutions.",
+    ogTitle: "Emergency Locksmith Yorkshire - 24/7 Lockout Service",
+    ogDescription: "24/7 emergency locksmith services across Yorkshire. Locked out? We'll be there in 15 minutes! Professional, licensed, insured locksmith services.",
     ogType: "website" as const
   },
 

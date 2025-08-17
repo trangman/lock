@@ -8,6 +8,8 @@ import TrustBadges from '@/components/TrustBadges';
 import LeadCapture from '@/components/LeadCapture';
 import AdvertiseBlock from '@/components/AdvertiseBlock';
 import Header from '@/components/Header';
+import FAQ from '@/components/FAQ';
+import BlogSection from '@/components/BlogSection';
 import { siteConfig } from '@/config/site';
 import { getHeroImage } from '@/config/cities';
 
@@ -22,9 +24,57 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Organization',
+            '@type': 'LocalBusiness',
             name: company.fullName,
+            alternateName: company.name,
             url: 'https://www.locksmithyorkshire.co.uk/',
+            telephone: contact.emergency.phone,
+            email: contact.general.email,
+            address: {
+              '@type': 'PostalAddress',
+              addressRegion: 'Yorkshire',
+              addressCountry: 'UK',
+              addressLocality: 'Yorkshire'
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 53.8008,
+              longitude: -1.5491
+            },
+            areaServed: [
+              'Leeds', 'Sheffield', 'Bradford', 'Hull', 'York', 'Wakefield', 
+              'Halifax', 'Huddersfield', 'Doncaster', 'Rotherham', 'Barnsley'
+            ],
+            serviceArea: {
+              '@type': 'GeoCircle',
+              geoMidpoint: {
+                '@type': 'GeoCoordinates',
+                latitude: 53.8008,
+                longitude: -1.5491
+              },
+              geoRadius: '50000'
+            },
+            openingHours: ['Mo-Su 00:00-23:59'],
+            priceRange: '££',
+            paymentAccepted: ['Cash', 'Credit Card', 'Debit Card'],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Locksmith Services',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  itemOffered: { '@type': 'Service', name: 'Emergency Locksmith' }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: { '@type': 'Service', name: 'Residential Locksmith' }
+                },
+                {
+                  '@type': 'Offer',
+                  itemOffered: { '@type': 'Service', name: 'Commercial Locksmith' }
+                }
+              ]
+            },
             sameAs: [
               siteConfig.social.facebook,
               siteConfig.social.twitter,
@@ -471,6 +521,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Blog Section for SEO */}
+      <BlogSection />
+
+      {/* FAQ Section for SEO */}
+      <FAQ />
 
       {/* Monetization: Advertise for businesses */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">

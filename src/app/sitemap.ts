@@ -19,6 +19,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFreq: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFreq: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/emergency-lockout-what-to-do`,
+      lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/choosing-right-security-locks-home`,
+      lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/car-lockout-solutions-prevention-emergency`,
+      lastModified: new Date(),
+      changeFreq: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   const citySitemapEntries = cityPages.map((city) => {
