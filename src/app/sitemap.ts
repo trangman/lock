@@ -136,6 +136,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFreq: 'monthly' as const,
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFreq: 'monthly' as const,
+      priority: 0.5,
+    },
   ];
 
   // Combine all pages

@@ -71,6 +71,13 @@ export const siteConfig = {
       available: '8:00 AM - 6:00 PM',
       price: 'From £150',
     },
+    keycutting: {
+      name: 'Key Cutting Services',
+      description: 'Professional key cutting, duplication, and replacement services',
+      response: '30 minutes',
+      available: '8:00 AM - 6:00 PM',
+      price: 'From £3',
+    },
   },
 
   areas: {
@@ -195,7 +202,7 @@ export const siteConfig = {
     },
     localSEO: {
       cities: ['Leeds', 'Sheffield', 'Bradford', 'Hull', 'York', 'Wakefield', 'Halifax', 'Huddersfield', 'Doncaster', 'Rotherham', 'Barnsley'],
-      services: ['emergency locksmith', 'residential locksmith', 'commercial locksmith', 'automotive locksmith', 'security systems'],
+      services: ['emergency locksmith', 'residential locksmith', 'commercial locksmith', 'automotive locksmith', 'security systems', 'key cutting services'],
       keywords: ['locksmith near me', 'emergency locksmith leeds', 'locksmith sheffield', 'locksmith bradford'],
     },
   },

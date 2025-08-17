@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { PhoneIcon, HomeIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, HomeIcon, BuildingOfficeIcon, KeyIcon, ShieldCheckIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 import TrustBadges from '@/components/TrustBadges';
 import LeadCapture from '@/components/LeadCapture';
 import Header from '@/components/Header';
@@ -254,7 +254,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {Object.entries(services).map(([key, service]) => (
                 <div 
                   key={key}
@@ -266,6 +266,9 @@ export default function Home() {
                       {key === 'emergency' && <PhoneIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
                       {key === 'residential' && <HomeIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
                       {key === 'commercial' && <BuildingOfficeIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
+                      {key === 'automotive' && <WrenchScrewdriverIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
+                      {key === 'security' && <ShieldCheckIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
+                      {key === 'keycutting' && <KeyIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {service.name}
@@ -290,8 +293,23 @@ export default function Home() {
                         </a>
                       )}
                       {key === 'commercial' && (
-                        <a href="/blog" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                        <a href="/blog/commercial-security-protecting-business" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
                           Business security tips →
+                        </a>
+                      )}
+                      {key === 'automotive' && (
+                        <a href="/blog/car-lockout-solutions-prevention-emergency" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Car lockout solutions →
+                        </a>
+                      )}
+                      {key === 'security' && (
+                        <a href="/blog" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Security system guide →
+                        </a>
+                      )}
+                      {key === 'keycutting' && (
+                        <a href="/blog/key-cutting-services-guide" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Key cutting guide →
                         </a>
                       )}
                     </div>
