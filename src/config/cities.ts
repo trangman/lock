@@ -45,6 +45,21 @@ export interface CityData {
     address?: string;
     blurb?: string;
   }>;
+  // Optional: crime statistics and safety information
+  crimeStats?: {
+    policeForce: string;
+    crimeRate: string;
+    safetyRating: string;
+    commonCrimes: string[];
+    safetyTips: string[];
+    policeContact: {
+      emergency: string;
+      nonEmergency: string;
+      website: string;
+    };
+    crimeMapUrl: string;
+    neighborhoodWatch: string[];
+  };
 }
 
 export const yorkshireCities: CityData[] = [
@@ -74,6 +89,25 @@ export const yorkshireCities: CityData[] = [
         "Security concerns in Leeds vary by area, with city centre car parks requiring vehicle locksmith services, student areas needing enhanced residential security, and business districts requiring access control systems. We provide tailored security solutions based on Leeds' specific crime patterns and work closely with West Yorkshire Police community safety initiatives.",
         "Our Leeds locksmith service includes 24/7 emergency response to Leeds Bradford Airport, major hotels in the city centre, and transport hubs including the train station and bus stations. We maintain rapid response capabilities for the large transient population of business travelers, tourists, and students who frequently require emergency locksmith assistance in Leeds."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft from person"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use multi-point locking systems on UPVC doors",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/leeds"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/leeds/",
+      neighborhoodWatch: ["Headingley", "Chapel Allerton", "Roundhay", "Meanwood", "Adel"]
     }
   },
   {
@@ -101,6 +135,25 @@ export const yorkshireCities: CityData[] = [
         "Sheffield's cultural venues including the Crucible Theatre, Lyceum Theatre, and numerous music venues require specialized access control and security systems. We provide emergency locksmith services for entertainment venues, hotels, and the thriving hospitality sector, ensuring rapid response during events and peak tourism periods when Sheffield hosts major snooker championships and festivals.",
         "Our Sheffield locksmith service extends to specialized industrial and commercial security for the city's remaining steel works, advanced manufacturing facilities in the Lower Don Valley, and the growing technology sector. We maintain expertise in high-security commercial locks, access control systems, and work with South Yorkshire Police on commercial security initiatives across Sheffield's diverse industrial base."
       ]
+    },
+    crimeStats: {
+      policeForce: "South Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Shoplifting"],
+      safetyTips: [
+        "Secure your vehicle in well-lit areas",
+        "Install burglar alarms and CCTV",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.southyorkshire.police.uk/your-area/sheffield"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/sheffield/",
+      neighborhoodWatch: ["Ecclesall", "Broomhill", "Nether Edge", "Crookes", "Walkley"]
     }
   },
   {
@@ -128,6 +181,25 @@ export const yorkshireCities: CityData[] = [
         "Bradford's cultural significance as a UNESCO City of Film and its numerous festivals and events create peak demand periods for our locksmith services. We provide specialized support for venues like the Alhambra Theatre, St George's Hall, and the many community centers that host Bradford's renowned festivals, ensuring rapid response during major cultural events.",
         "Our Bradford locksmith service includes expertise in security for the city's educational institutions including the University of Bradford, Bradford College campuses, and numerous schools across the district. We understand the specific access control and security requirements of educational facilities and provide rapid response for student accommodation and campus security needs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/bradford"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/bradford/",
+      neighborhoodWatch: ["Heaton", "Shipley", "Saltaire", "Bingley", "Keighley"]
     }
   },
   {
@@ -155,6 +227,25 @@ export const yorkshireCities: CityData[] = [
         "Hull's significance as a major UK port and its proximity to the Humber Bridge create unique access control needs for commercial and transport facilities. We provide specialized locksmith services for port security, logistics facilities, and transport infrastructure, ensuring rapid response for the city's vital role in UK trade and commerce with expertise in high-security maritime environments.",
         "Our Hull locksmith service includes support for the city's educational institutions including the University of Hull, Hull College campuses, and numerous schools across the city. We understand the specific security requirements of educational facilities in a maritime city and provide rapid response for student accommodation, particularly in areas like Cottingham and the university district with their high student populations."
       ]
+    },
+    crimeStats: {
+      policeForce: "Humberside Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use corrosion-resistant locks for coastal areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.humberside.police.uk/your-area/hull"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/kingston-upon-hull/",
+      neighborhoodWatch: ["Anlaby", "Cottingham", "Hessle", "Willerby", "Kirk Ella"]
     }
   },
   {
@@ -182,6 +273,25 @@ export const yorkshireCities: CityData[] = [
         "York's educational institutions including the University of York, York St John University, and numerous colleges create substantial student populations requiring specialized locksmith services. Our York team provides rapid response for student accommodation in Heslington, city centre student flats, and university facilities, understanding the unique access challenges of shared accommodation and campus security.",
         "Our York locksmith service extends to the city's numerous churches, museums, and heritage attractions requiring specialized high-security and conservation-appropriate solutions. We work with English Heritage, the National Trust, and local conservation officers to ensure security improvements meet heritage requirements while providing effective protection for these internationally significant historic buildings and collections."
       ]
+    },
+    crimeStats: {
+      policeForce: "North Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Excellent",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Tourist-related theft"],
+      safetyTips: [
+        "Use heritage-appropriate security systems",
+        "Install CCTV for tourist areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.northyorkshire.police.uk/your-area/york"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/york/",
+      neighborhoodWatch: ["Clifton", "Acomb", "Heworth", "Fulford", "Bishopthorpe"]
     }
   },
   {
@@ -201,6 +311,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Wakefield and surrounding areas.",
         "Licensed and insured locksmiths serving Wakefield city centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/wakefield"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/wakefield/",
+      neighborhoodWatch: ["Wakefield City Centre", "Ossett", "Horbury", "Pontefract", "Castleford"]
     }
   },
   {
@@ -220,6 +349,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Doncaster and surrounding areas.",
         "Licensed and insured locksmiths serving Doncaster city centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "South Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Shoplifting"],
+      safetyTips: [
+        "Secure your vehicle in well-lit areas",
+        "Install burglar alarms and CCTV",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.southyorkshire.police.uk/your-area/doncaster"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/doncaster/",
+      neighborhoodWatch: ["Doncaster City Centre", "Bentley", "Edenthorpe", "Bessacarr", "Cantley"]
     }
   },
   {
@@ -239,6 +387,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Rotherham and surrounding areas.",
         "Licensed and insured locksmiths serving Rotherham town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "South Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.southyorkshire.police.uk/your-area/rotherham"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/rotherham/",
+      neighborhoodWatch: ["Rotherham Town Centre", "Maltby", "Wickersley", "Bramley", "Swinton"]
     }
   },
   {
@@ -258,6 +425,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Barnsley and surrounding areas.",
         "Licensed and insured locksmiths serving Barnsley town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "South Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.southyorkshire.police.uk/your-area/barnsley"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/south-yorkshire-police/barnsley/",
+      neighborhoodWatch: ["Barnsley Town Centre", "Wombwell", "Hoyland", "Penistone", "Cudworth"]
     }
   },
   {
@@ -277,6 +463,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Halifax and surrounding areas.",
         "Licensed and insured locksmiths serving Halifax town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/halifax"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/halifax/",
+      neighborhoodWatch: ["Halifax Town Centre", "Sowerby Bridge", "Todmorden", "Hebden Bridge", "Mytholmroyd"]
     }
   },
   {
@@ -296,6 +501,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Huddersfield and surrounding areas.",
         "Licensed and insured locksmiths serving Huddersfield town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/huddersfield"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/huddersfield/",
+      neighborhoodWatch: ["Huddersfield Town Centre", "Lindley", "Golcar", "Slaithwaite", "Marsden"]
     }
   },
   {
@@ -315,6 +539,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Scarborough and surrounding areas.",
         "Licensed and insured locksmiths serving Scarborough town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "North Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Tourist-related theft"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use corrosion-resistant locks for coastal areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.northyorkshire.police.uk/your-area/scarborough"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/scarborough/",
+      neighborhoodWatch: ["Scarborough Town Centre", "North Bay", "South Bay", "Falsgrave", "Newby"]
     }
   },
   {
@@ -334,6 +577,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Harrogate and surrounding areas.",
         "Licensed and insured locksmiths serving Harrogate town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "North Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Excellent",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install high-quality security systems",
+        "Use premium locks on properties",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.northyorkshire.police.uk/your-area/harrogate"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/harrogate/",
+      neighborhoodWatch: ["Harrogate Town Centre", "Bilton", "Starbeck", "Knaresborough", "Pannal"]
     }
   },
   {
@@ -353,6 +615,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Beverley and surrounding areas.",
         "Licensed and insured locksmiths serving Beverley town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "Humberside Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use high-quality locks on properties",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.humberside.police.uk/your-area/beverley"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/beverley/",
+      neighborhoodWatch: ["Beverley Town Centre", "Molescroft", "Tickton", "Leconfield", "Walkington"]
     }
   },
   {
@@ -372,6 +653,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Pontefract and surrounding areas.",
         "Licensed and insured locksmiths serving Pontefract town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/pontefract"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/pontefract/",
+      neighborhoodWatch: ["Pontefract Town Centre", "Carleton", "Chequerfield", "Tanshelf", "Monkhill"]
     }
   },
   {
@@ -391,6 +691,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Dewsbury and surrounding areas.",
         "Licensed and insured locksmiths serving Dewsbury town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/dewsbury"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/dewsbury/",
+      neighborhoodWatch: ["Dewsbury Town Centre", "Earlsheaton", "Thornhill", "Savoury", "Shaw Cross"]
     }
   },
   {
@@ -410,6 +729,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Batley and surrounding areas.",
         "Licensed and insured locksmiths serving Batley town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/batley"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/batley/",
+      neighborhoodWatch: ["Batley Town Centre", "Carlinghow", "Healey", "Soothill", "Upper Batley"]
     }
   },
   {
@@ -429,6 +767,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Keighley and surrounding areas.",
         "Licensed and insured locksmiths serving Keighley town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/keighley"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/keighley/",
+      neighborhoodWatch: ["Keighley Town Centre", "Eastburn", "Steeton", "Silsden", "Cross Roads"]
     }
   },
   {
@@ -448,6 +805,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Castleford and surrounding areas.",
         "Licensed and insured locksmiths serving Castleford town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "West Yorkshire Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.westyorkshire.police.uk/your-area/castleford"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/west-yorkshire-police/castleford/",
+      neighborhoodWatch: ["Castleford Town Centre", "Glasshoughton", "Whitwood", "Airedale", "Fryston"]
     }
   },
   {
@@ -467,6 +843,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Selby and surrounding areas.",
         "Licensed and insured locksmiths serving Selby town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "North Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use high-quality locks on properties",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.northyorkshire.police.uk/your-area/selby"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/selby/",
+      neighborhoodWatch: ["Selby Town Centre", "Barlby", "Brayton", "Riccall", "Cawood"]
     }
   },
   {
@@ -486,6 +881,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Goole and surrounding areas.",
         "Licensed and insured locksmiths serving Goole town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "Humberside Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use corrosion-resistant locks for port areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.humberside.police.uk/your-area/goole"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/goole/",
+      neighborhoodWatch: ["Goole Town Centre", "Boothferry", "Hook", "Airmyn", "Rawcliffe"]
     }
   },
   {
@@ -505,6 +919,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Driffield and surrounding areas.",
         "Licensed and insured locksmiths serving Driffield town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "Humberside Police",
+      crimeRate: "Low",
+      safetyRating: "Excellent",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour"],
+      safetyTips: [
+        "Install security lighting around your property",
+        "Use high-quality locks on properties",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.humberside.police.uk/your-area/driffield"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/driffield/",
+      neighborhoodWatch: ["Driffield Town Centre", "Nafferton", "Wetwang", "Sledmere", "Bainton"]
     }
   },
   {
@@ -524,6 +957,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Bridlington and surrounding areas.",
         "Licensed and insured locksmiths serving Bridlington town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "Humberside Police",
+      crimeRate: "Low",
+      safetyRating: "Very Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Tourist-related theft"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use corrosion-resistant locks for coastal areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.humberside.police.uk/your-area/bridlington"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/humberside-police/bridlington/",
+      neighborhoodWatch: ["Bridlington Town Centre", "North Bay", "South Bay", "Flamborough", "Bempton"]
     }
   },
   {
@@ -543,6 +995,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Whitby and surrounding areas.",
         "Licensed and insured locksmiths serving Whitby town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "North Yorkshire Police",
+      crimeRate: "Low",
+      safetyRating: "Excellent",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Tourist-related theft"],
+      safetyTips: [
+        "Install weather-resistant security systems",
+        "Use corrosion-resistant locks for coastal areas",
+        "Join local neighborhood watch schemes",
+        "Report crime through official channels"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.northyorkshire.police.uk/your-area/whitby"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/north-yorkshire-police/whitby/",
+      neighborhoodWatch: ["Whitby Town Centre", "West Cliff", "East Cliff", "Sandsend", "Robin Hood's Bay"]
     }
   },
   {
@@ -562,6 +1033,25 @@ export const yorkshireCities: CityData[] = [
         "Residential and commercial locksmith services across Middlesbrough and surrounding areas.",
         "Licensed and insured locksmiths serving Middlesbrough town centre and suburbs."
       ]
+    },
+    crimeStats: {
+      policeForce: "Cleveland Police",
+      crimeRate: "Medium",
+      safetyRating: "Good",
+      commonCrimes: ["Vehicle crime", "Burglary", "Anti-social behaviour", "Theft"],
+      safetyTips: [
+        "Install security lighting and alarms",
+        "Use high-security locks on commercial properties",
+        "Join local neighborhood watch schemes",
+        "Report suspicious activity immediately"
+      ],
+      policeContact: {
+        emergency: "999",
+        nonEmergency: "101",
+        website: "https://www.cleveland.police.uk/your-area/middlesbrough"
+      },
+      crimeMapUrl: "https://www.police.uk/area/your-area/cleveland-police/middlesbrough/",
+      neighborhoodWatch: ["Middlesbrough Town Centre", "Acklam", "Linthorpe", "Marton", "Nunthorpe"]
     }
   }
 ];

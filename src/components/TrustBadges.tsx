@@ -141,7 +141,8 @@ export default function TrustBadges() {
               Professional Standards & Certifications
             </h3>
             <p className="text-gray-600 mb-4">
-              Our commitment to excellence is backed by industry recognition and continuous training.
+              Our commitment to excellence is backed by industry recognition and continuous training. 
+              Learn more about our <a href="/blog" className="text-blue-600 hover:text-blue-700 underline">security expertise</a> and <a href="/accessibility" className="text-blue-600 hover:text-blue-700 underline">accessibility standards</a>.
             </p>
             <ul className="text-sm text-gray-600 space-y-1" role="list">
               <li>• Guild of Professional Locksmiths Member</li>

@@ -9,6 +9,7 @@ import AdvertiseBlock from '@/components/AdvertiseBlock';
 import SponsorBlock from '@/components/SponsorBlock';
 import FeaturedListings from '@/components/FeaturedListings';
 import Header from '@/components/Header';
+import CrimeStats from '@/components/CrimeStats';
 
 interface CityPageProps {
   params: Promise<{
@@ -315,6 +316,14 @@ export default async function CityPage({ params }: CityPageProps) {
            </div>
         </div>
       </section>
+
+      {/* Crime Statistics Section - Only show if crime stats are available */}
+      {city.crimeStats && (
+        <CrimeStats 
+          cityName={city.name} 
+          crimeStats={city.crimeStats} 
+        />
+      )}
 
       {/* About Section */}
       <section id="about" className="py-16 sm:py-20 bg-gray-50">

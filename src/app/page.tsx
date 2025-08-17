@@ -277,6 +277,23 @@ export default function Home() {
                       <p><strong>Available:</strong> {service.available}</p>
                       <p><strong>From:</strong> {service.price}</p>
                     </div>
+                    <div className="mt-4">
+                      {key === 'emergency' && (
+                        <a href="/blog/emergency-lockout-what-to-do" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Learn about emergency procedures →
+                        </a>
+                      )}
+                      {key === 'residential' && (
+                        <a href="/blog/choosing-right-security-locks-home" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Home security guide →
+                        </a>
+                      )}
+                      {key === 'commercial' && (
+                        <a href="/blog" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                          Business security tips →
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -292,6 +309,52 @@ export default function Home() {
 
         {/* Blog Section */}
         <BlogSection />
+
+        {/* Crime Statistics & Safety Information */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Local Crime Statistics & Safety Resources
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Stay informed about crime patterns in your area and access official police resources for enhanced security awareness
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Official Crime Maps</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Access official police crime statistics and maps for all Yorkshire areas.
+                </p>
+                <a href="https://www.police.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                  View National Crime Map →
+                </a>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Police Force Websites</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Direct links to local police force websites and community safety information.
+                </p>
+                <a href="/locksmith" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                  View Local Police Resources →
+                </a>
+              </div>
+              
+              <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Security Assessment</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Get a professional security assessment based on local crime patterns.
+                </p>
+                <a href="#services" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                  Book Security Assessment →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Lead Capture */}
         <LeadCapture />

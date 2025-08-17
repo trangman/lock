@@ -281,6 +281,388 @@ export default function LocksmithCitiesPage() {
         </div>
       </section>
 
+                {/* Internal Links Section for SEO */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                  Learn More About Our Services
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Discover comprehensive guides and expert advice on locksmith services and home security
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Emergency Services</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Learn what to do in emergency lockout situations and how we can help.
+                  </p>
+                  <a href="/blog/emergency-lockout-what-to-do" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                    Emergency Lockout Guide →
+                  </a>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Home Security</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Expert advice on choosing the right security locks for your home.
+                  </p>
+                  <a href="/blog/choosing-right-security-locks-home" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                    Home Security Guide →
+                  </a>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Automotive Services</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Car lockout solutions and automotive locksmith services.
+                  </p>
+                  <a href="/blog/car-lockout-solutions-prevention-emergency" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                    Car Lockout Guide →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Crime Statistics & Safety Information */}
+          <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                  Local Crime Statistics & Safety Information
+                </h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Stay informed about crime patterns in your area and access official police resources for enhanced security awareness
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* West Yorkshire Cities */}
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Leeds Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View official crime data, safety ratings, and police contact information for Leeds.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/leeds/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/leeds" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Leeds →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Bradford Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Bradford.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/bradford/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/bradford" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Bradford →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Wakefield Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Wakefield.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/wakefield/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/wakefield" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Wakefield →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Halifax Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Halifax.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/halifax/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/halifax" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Halifax →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Huddersfield Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Huddersfield.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/huddersfield/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/huddersfield" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Huddersfield →
+                    </a>
+                  </div>
+                </div>
+                
+                {/* South Yorkshire Cities */}
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Sheffield Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Sheffield.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/south-yorkshire-police/sheffield/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.southyorkshire.police.uk/your-area/sheffield" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      South Yorkshire Police Sheffield →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Doncaster Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Doncaster.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/south-yorkshire-police/doncaster/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.southyorkshire.police.uk/your-area/doncaster" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      South Yorkshire Police Doncaster →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Rotherham Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Rotherham.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/south-yorkshire-police/rotherham/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.southyorkshire.police.uk/your-area/rotherham" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      South Yorkshire Police Rotherham →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Barnsley Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Barnsley.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/south-yorkshire-police/barnsley/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.southyorkshire.police.uk/your-area/barnsley" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      South Yorkshire Police Barnsley →
+                    </a>
+                  </div>
+                </div>
+                
+                {/* North Yorkshire Cities */}
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">York Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime data, safety ratings, and police contact information for York.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/north-yorkshire-police/york/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.northyorkshire.police.uk/your-area/york" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      North Yorkshire Police York →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Scarborough Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Scarborough.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/north-yorkshire-police/scarborough/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.northyorkshire.police.uk/your-area/scarborough" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      North Yorkshire Police Scarborough →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Harrogate Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Harrogate.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/north-yorkshire-police/harrogate/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.northyorkshire.police.uk/your-area/harrogate" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      North Yorkshire Police Harrogate →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Whitby Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Whitby.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/north-yorkshire-police/whitby/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.northyorkshire.police.uk/your-area/whitby" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      North Yorkshire Police Whitby →
+                    </a>
+                  </div>
+                </div>
+                
+                {/* East Yorkshire Cities */}
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Hull Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Hull.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/humberside-police/kingston-upon-hull/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.humberside.police.uk/your-area/hull" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Humberside Police Hull →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Beverley Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Beverley.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/humberside-police/beverley/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.humberside.police.uk/your-area/beverley" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Humberside Police Beverley →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Bridlington Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Bridlington.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/humberside-police/bridlington/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.humberside.police.uk/your-area/bridlington" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Humberside Police Bridlington →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Goole Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Goole.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/humberside-police/goole/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.humberside.police.uk/your-area/goole" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Humberside Police Goole →
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Additional Towns */}
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Pontefract Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Check crime rates, safety ratings, and police contact details for Pontefract.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/pontefract/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/pontefract" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Pontefract →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Dewsbury Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Access crime statistics, safety information, and police resources for Dewsbury.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/west-yorkshire-police/dewsbury/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.westyorkshire.police.uk/your-area/dewsbury" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      West Yorkshire Police Dewsbury →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Middlesbrough Crime Statistics</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    View crime patterns, safety information, and police resources for Middlesbrough.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/area/your-area/cleveland-police/middlesbrough/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Official Crime Map →
+                    </a>
+                    <a href="https://www.cleveland.police.uk/your-area/middlesbrough" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Cleveland Police Middlesbrough →
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">All Yorkshire Areas</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    Find crime statistics and police information for all Yorkshire cities and towns.
+                  </p>
+                  <div className="space-y-2">
+                    <a href="https://www.police.uk/" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      National Crime Map →
+                    </a>
+                    <a href="https://www.gov.uk/report-crime" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                      Report Crime Online →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
       {/* Services Overview */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
