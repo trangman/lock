@@ -7,10 +7,10 @@ const nextConfig: NextConfig = {
   generateEtags: false,
   
   // Experimental features for performance
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['@heroicons/react'],
-    turbo: {
+      experimental: {
+      optimizePackageImports: ['@heroicons/react'],
+    },
+    turbopack: {
       rules: {
         '*.svg': {
           loaders: ['@svgr/webpack'],
@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
         },
       },
     },
-  },
   
   // Image optimization
   images: {

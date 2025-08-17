@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getCityBySlug } from '@/config/cities';
 
-export const runtime = 'edge';
 export const alt = 'Locksmith Yorkshire';
 export const size = { width: 1200, height: 630 } as const;
 export const contentType = 'image/png';

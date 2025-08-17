@@ -15,7 +15,7 @@ export default function LiveChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: siteConfig.leadGen.chat.welcomeMessage,
+      text: "Hello! I'm here to help with your locksmith needs. How can I assist you today?",
       sender: 'agent',
       timestamp: new Date()
     }
@@ -26,7 +26,7 @@ export default function LiveChat() {
   const [notificationPermission, setNotificationPermission] = useState<NotificationPermission>('default');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const { contact, leadGen } = siteConfig;
+  const { contact } = siteConfig;
 
   // Request notification permission on component mount
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function LiveChat() {
       setTimeout(() => {
         const agentResponse: Message = {
           id: messages.length + 2,
-          text: leadGen.chat.responseMessage.replace('0800-123-4567', contact.emergency.display),
+          text: `Thanks for your message! Our team will get back to you shortly. For urgent assistance, call us at ${contact.emergency.phone}.`,
           sender: 'agent',
           timestamp: new Date()
         };
@@ -271,7 +271,7 @@ export default function LiveChat() {
               </div>
               <div className="flex items-center justify-between mt-2">
                 <p className="text-xs text-gray-500">
-                  For urgent emergencies, call {contact.emergency.display}
+                  For urgent emergencies, call {contact.emergency.phone}
                 </p>
                 {notificationPermission === 'default' && (
                   <button

@@ -106,7 +106,7 @@ export default async function CityPage({ params }: CityPageProps) {
           '@type': 'LocalBusiness',
           name: siteConfig.company.name,
           url: `https://www.locksmithyorkshire.co.uk/locksmith/${city.slug}`,
-          telephone: contact.emergency.display,
+          telephone: contact.emergency.phone,
           areaServed: city.name,
           address: {
             '@type': 'PostalAddress',
@@ -199,7 +199,7 @@ export default async function CityPage({ params }: CityPageProps) {
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center">
                     <ClockIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-3 text-blue-200 flex-shrink-0" />
-                    <span className="text-sm sm:text-base">{contact.service.hours}</span>
+                                         <span className="text-sm sm:text-base">{contact.hours.emergency}</span>
                   </div>
                   <div className="flex items-center">
                     <ShieldCheckIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-3 text-blue-200 flex-shrink-0" />
@@ -232,103 +232,87 @@ export default async function CityPage({ params }: CityPageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Emergency Locksmith */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                <PhoneIcon className="h-6 w-6 text-red-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.emergency.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.emergency.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.emergency.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
+                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+             {/* Emergency Locksmith */}
+             <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                 <PhoneIcon className="h-6 w-6 text-red-600" />
+               </div>
+               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.emergency.name}</h3>
+               <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                 {services.emergency.description}
+               </p>
+               <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                 <p><strong>Response:</strong> {services.emergency.response}</p>
+                 <p><strong>Available:</strong> {services.emergency.available}</p>
+                 <p><strong>From:</strong> {services.emergency.price}</p>
+               </div>
+             </div>
 
-            {/* Residential Locksmith */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <HomeIcon className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.residential.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.residential.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.residential.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
+             {/* Residential Locksmith */}
+             <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                 <HomeIcon className="h-6 w-6 text-blue-600" />
+               </div>
+               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.residential.name}</h3>
+               <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                 {services.residential.description}
+               </p>
+               <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                 <p><strong>Response:</strong> {services.residential.response}</p>
+                 <p><strong>Available:</strong> {services.residential.available}</p>
+                 <p><strong>From:</strong> {services.residential.price}</p>
+               </div>
+             </div>
 
-            {/* Commercial Locksmith */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <BuildingOfficeIcon className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.commercial.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.commercial.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.commercial.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
+             {/* Commercial Locksmith */}
+             <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                 <BuildingOfficeIcon className="h-6 w-6 text-green-600" />
+               </div>
+               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.commercial.name}</h3>
+               <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                 {services.commercial.description}
+               </p>
+               <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                 <p><strong>Response:</strong> {services.commercial.response}</p>
+                 <p><strong>Available:</strong> {services.commercial.available}</p>
+                 <p><strong>From:</strong> {services.commercial.price}</p>
+               </div>
+             </div>
 
-            {/* Lock Installation */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <LockClosedIcon className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.installation.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.installation.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.installation.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
+             {/* Automotive Locksmith */}
+             <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                 <LockClosedIcon className="h-6 w-6 text-purple-600" />
+               </div>
+               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.automotive.name}</h3>
+               <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                 {services.automotive.description}
+               </p>
+               <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                 <p><strong>Response:</strong> {services.automotive.response}</p>
+                 <p><strong>Available:</strong> {services.automotive.available}</p>
+                 <p><strong>From:</strong> {services.automotive.price}</p>
+               </div>
+             </div>
 
-            {/* Key Cutting */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                <KeyIcon className="h-6 w-6 text-yellow-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.keyCutting.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.keyCutting.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.keyCutting.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Security Consultation */}
-            <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                <ShieldCheckIcon className="h-6 w-6 text-indigo-600" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.consultation.name}</h3>
-              <p className="text-gray-600 mb-4 text-sm sm:text-base">
-                {services.consultation.description}
-              </p>
-              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
-                {services.consultation.features.map((feature, index) => (
-                  <li key={index}>• {feature}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+             {/* Security Systems */}
+             <div className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow">
+               <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                 <ShieldCheckIcon className="h-6 w-6 text-yellow-600" />
+               </div>
+               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{services.security.name}</h3>
+               <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                 {services.security.description}
+               </p>
+               <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                 <p><strong>Response:</strong> {services.security.response}</p>
+                 <p><strong>Available:</strong> {services.security.available}</p>
+                 <p><strong>From:</strong> {services.security.price}</p>
+               </div>
+             </div>
+           </div>
         </div>
       </section>
 
@@ -502,15 +486,15 @@ export default async function CityPage({ params }: CityPageProps) {
                 <div className="flex items-center">
                   <PhoneIcon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm sm:text-base">{contact.emergency.label}</p>
-                    <p className="text-gray-600 text-sm sm:text-base">{contact.emergency.display}</p>
+                                         <p className="font-semibold text-gray-900 text-sm sm:text-base">Emergency Service</p>
+                    <p className="text-gray-600 text-sm sm:text-base">{contact.emergency.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <ClockIcon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 mr-3 sm:mr-4 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-gray-900 text-sm sm:text-base">Service Hours</p>
-                    <p className="text-gray-600 text-sm sm:text-base">{contact.service.hours}</p>
+                                         <p className="text-gray-600 text-sm sm:text-base">{contact.hours.business}</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -581,19 +565,18 @@ export default async function CityPage({ params }: CityPageProps) {
                   <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
                     Service Required
                   </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-                  >
-                    <option>Select a service</option>
-                    <option>{services.emergency.name}</option>
-                    <option>{services.residential.name}</option>
-                    <option>{services.commercial.name}</option>
-                    <option>{services.installation.name}</option>
-                    <option>{services.keyCutting.name}</option>
-                    <option>{services.consultation.name}</option>
-                  </select>
+                                     <select
+                     id="service"
+                     name="service"
+                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                   >
+                     <option>Select a service</option>
+                     <option>{services.emergency.name}</option>
+                     <option>{services.residential.name}</option>
+                     <option>{services.commercial.name}</option>
+                     <option>{services.automotive.name}</option>
+                     <option>{services.security.name}</option>
+                   </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">

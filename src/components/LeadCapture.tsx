@@ -138,7 +138,7 @@ export default function LeadCapture() {
             Get Your Free Quote Today
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Need a locksmith? Fill out the form below and we'll get back to you within 15 minutes with a competitive quote.
+            Need a locksmith? Fill out the form below and we&apos;ll get back to you within 15 minutes with a competitive quote.
           </p>
         </div>
 
@@ -151,7 +151,7 @@ export default function LeadCapture() {
                 role="alert"
                 aria-live="polite"
               >
-                <p className="font-medium">Thank you! We've received your request and will contact you within 15 minutes.</p>
+                <p className="font-medium">Thank you! We&apos;ve received your request and will contact you within 15 minutes.</p>
               </div>
             )}
 
@@ -450,7 +450,7 @@ export default function LeadCapture() {
               <a href="/privacy" className="text-blue-600 hover:text-blue-800 underline">
                 Privacy Policy
               </a>
-              . We'll never share your information with third parties.
+              . We&apos;ll never share your information with third parties.
             </p>
           </form>
         </div>

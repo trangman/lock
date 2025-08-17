@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { HomeIcon, ShieldCheckIcon, LockClosedIcon, ExclamationTriangleIcon, CheckCircleIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { ShieldCheckIcon, LockClosedIcon, ArrowLeftIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
@@ -133,7 +133,7 @@ export default function SecurityLocksArticle() {
           
           <p className="text-xl text-blue-100 leading-relaxed">
             Discover the best types of locks for maximum home security. From traditional mortise locks to modern smart locks, 
-            find what's right for your property with expert advice.
+            find what&apos;s right for your property with expert advice.
           </p>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function SecurityLocksArticle() {
             {/* Introduction */}
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-blue-800 text-lg leading-relaxed">
-                <strong>Your home's security starts with the right locks.</strong> With so many options available today, 
+                <strong>Your home&apos;s security starts with the right locks.</strong> With so many options available today, 
                 choosing the best security locks for your home can be overwhelming. This comprehensive guide will help you 
                 understand different lock types, their security levels, and how to make the right choice for your property.
               </p>
@@ -236,7 +236,7 @@ export default function SecurityLocksArticle() {
                   </h3>
                   
                   <p className="text-gray-700 mb-4 leading-relaxed">
-                    Euro cylinder locks are modern, versatile locks that fit into a standard door cavity. They're popular 
+                    Euro cylinder locks are modern, versatile locks that fit into a standard door cavity. They&apos;re popular 
                     in newer homes and offer good security with easy replacement options.
                   </p>
                   
@@ -270,7 +270,7 @@ export default function SecurityLocksArticle() {
                   </h3>
                   
                   <p className="text-gray-700 mb-4 leading-relaxed">
-                    Smart locks offer keyless entry and remote access control. They're perfect for modern homes and 
+                    Smart locks offer keyless entry and remote access control. They&apos;re perfect for modern homes and 
                     provide convenience alongside security features.
                   </p>
                   
@@ -371,9 +371,9 @@ export default function SecurityLocksArticle() {
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="font-semibold text-gray-900 mb-3">1. Assess Your Security Needs</h3>
                   <ul className="text-gray-700 text-sm space-y-2">
-                    <li>• What's the crime rate in your area?</li>
+                    <li>• What&apos;s the crime rate in your area?</li>
                     <li>• What type of property do you own?</li>
-                    <li>• What's the value of your belongings?</li>
+                    <li>• What&apos;s the value of your belongings?</li>
                     <li>• Do you have insurance requirements?</li>
                   </ul>
                 </div>
@@ -394,7 +394,7 @@ export default function SecurityLocksArticle() {
                     <li>• Do you want keyless entry?</li>
                     <li>• How many people need access?</li>
                     <li>• Do you need remote access?</li>
-                    <li>• What's your technical comfort level?</li>
+                    <li>• What&apos;s your technical comfort level?</li>
                   </ul>
                 </div>
               </div>
@@ -405,7 +405,7 @@ export default function SecurityLocksArticle() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Professional Installation is Key</h2>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Even the best lock won't provide adequate security if it's not installed correctly. Professional 
+                Even the best lock won&apos;t provide adequate security if it&apos;s not installed correctly. Professional 
                 installation ensures your locks work properly and provide maximum security.
               </p>
               
@@ -426,7 +426,7 @@ export default function SecurityLocksArticle() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Conclusion</h2>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Choosing the right security locks for your home is a crucial decision that affects your family's safety 
+                Choosing the right security locks for your home is a crucial decision that affects your family&apos;s safety 
                 and your peace of mind. Consider your security needs, budget, and convenience requirements when making your choice.
               </p>
               
@@ -466,8 +466,8 @@ export default function SecurityLocksArticle() {
               href="/blog/emergency-lockout-what-to-do"
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
             >
-              <h3 className="font-semibold text-gray-900 mb-2">Emergency Lockout? Here's What to Do</h3>
-              <p className="text-gray-600 text-sm">Find yourself locked out? Don't panic! Learn the essential steps...</p>
+              <h3 className="font-semibold text-gray-900 mb-2">Emergency Lockout? Here&apos;s What to Do</h3>
+              <p className="text-gray-600 text-sm">Find yourself locked out? Don&apos;t panic! Learn the essential steps...</p>
             </Link>
             
             <Link 

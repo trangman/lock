@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PhoneIcon, ClockIcon, ExclamationTriangleIcon, CheckCircleIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, ExclamationTriangleIcon, CheckCircleIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
@@ -128,11 +128,11 @@ export default function EmergencyLockoutArticle() {
           </div>
           
           <h1 className="text-3xl sm:text-4xl font-bold mb-6">
-            Emergency Lockout? Here's What to Do
+            Emergency Lockout? Here&apos;s What to Do
           </h1>
           
           <p className="text-xl text-blue-100 leading-relaxed">
-            Find yourself locked out? Don't panic! Learn the essential steps to take and how to get help quickly from professional locksmiths.
+            Find yourself locked out? Don&apos;t panic! Learn the essential steps to take and how to get help quickly from professional locksmiths.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ export default function EmergencyLockoutArticle() {
             {/* Introduction */}
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-blue-800 text-lg leading-relaxed">
-                <strong>Emergency lockouts can happen to anyone, anywhere, at any time.</strong> Whether you're locked out of your home, car, or office, 
+                <strong>Emergency lockouts can happen to anyone, anywhere, at any time.</strong>                 Whether you&apos;re locked out of your home, car, or office, 
                 staying calm and knowing what to do can make all the difference. This comprehensive guide will walk you through the essential steps 
                 to take during an emergency lockout situation.
               </p>
@@ -165,14 +165,14 @@ export default function EmergencyLockoutArticle() {
               
               <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-6">
                 <li>Where exactly are you locked out? (Home, car, office, etc.)</li>
-                <li>What time is it and what's the weather like?</li>
+                <li>What time is it and what&apos;s the weather like?</li>
                 <li>Do you have any alternative access points?</li>
                 <li>Are there any immediate safety concerns?</li>
               </ul>
               
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                 <p className="text-yellow-800 text-sm">
-                  <strong>Safety First:</strong> If you're in an unsafe area or it's late at night, prioritize your safety over trying to solve the lockout yourself.
+                  <strong>Safety First:</strong> If you&apos;re in an unsafe area or it&apos;s late at night, prioritize your safety over trying to solve the lockout yourself.
                 </p>
               </div>
             </section>
@@ -225,7 +225,7 @@ export default function EmergencyLockoutArticle() {
               </h2>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Once you've assessed the situation and checked for alternatives, it's time to call professional help. 
+                Once you&apos;ve assessed the situation and checked for alternatives, it&apos;s time to call professional help. 
                 Professional locksmiths have the tools, skills, and experience to safely resolve your lockout without causing damage.
               </p>
               
@@ -306,7 +306,7 @@ export default function EmergencyLockoutArticle() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Assessment</h3>
-                    <p className="text-gray-700 text-sm">They'll assess the lock type and determine the best approach</p>
+                    <p className="text-gray-700 text-sm">They&apos;ll assess the lock type and determine the best approach</p>
                   </div>
                 </div>
                 
@@ -326,7 +326,7 @@ export default function EmergencyLockoutArticle() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Recommendations</h3>
-                    <p className="text-gray-700 text-sm">You'll receive advice on preventing future lockouts and improving security</p>
+                    <p className="text-gray-700 text-sm">You&apos;ll receive advice on preventing future lockouts and improving security</p>
                   </div>
                 </div>
               </div>
@@ -337,13 +337,13 @@ export default function EmergencyLockoutArticle() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Conclusion</h2>
               
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Emergency lockouts are stressful situations, but they don't have to be overwhelming. By staying calm, 
+                Emergency lockouts are stressful situations, but they don&apos;t have to be overwhelming. By staying calm, 
                 checking for alternatives, and calling professional help, you can resolve the situation quickly and safely.
               </p>
               
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Remember, professional locksmiths are available 24/7 to help with emergency lockouts across Yorkshire. 
-                Don't hesitate to call for assistance when you need it most.
+                Don&apos;t hesitate to call for assistance when you need it most.
               </p>
               
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">

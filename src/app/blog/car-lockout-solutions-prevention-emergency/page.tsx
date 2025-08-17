@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { KeyIcon, CarIcon, ExclamationTriangleIcon, CheckCircleIcon, ArrowLeftIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { ExclamationTriangleIcon, CheckCircleIcon, ArrowLeftIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
@@ -146,7 +146,7 @@ export default function CarLockoutArticle() {
             {/* Introduction */}
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
               <p className="text-blue-800 text-lg leading-relaxed">
-                <strong>Car lockouts are one of the most common automotive emergencies.</strong> Whether you've accidentally 
+                <strong>Car lockouts are one of the most common automotive emergencies.</strong>                 Whether you&apos;ve accidentally 
                 locked your keys inside, lost your keys, or experienced a key malfunction, being locked out of your vehicle 
                 can be frustrating and stressful. This guide will help you prevent car lockouts and know what to do when they occur.
               </p>
@@ -246,7 +246,7 @@ export default function CarLockoutArticle() {
                     <li>• Where exactly are you located?</li>
                     <li>• Is it safe to wait for help?</li>
                     <li>• Do you have any alternative access?</li>
-                    <li>• What time is it and what's the weather?</li>
+                    <li>• What time is it and what&apos;s the weather?</li>
                   </ul>
                 </div>
                 
@@ -266,7 +266,7 @@ export default function CarLockoutArticle() {
                 <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
                   <h3 className="font-semibold text-purple-800 mb-3">Step 3: Call Professional Help</h3>
                   <p className="text-purple-700 text-sm mb-3">
-                    If you can't gain access yourself, it's time to call professional automotive locksmith services:
+                    If you can&apos;t gain access yourself, it&apos;s time to call professional automotive locksmith services:
                   </p>
                   <ul className="text-purple-700 text-sm space-y-1">
                     <li>• Call a local automotive locksmith</li>
@@ -352,7 +352,7 @@ export default function CarLockoutArticle() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Assessment</h3>
-                    <p className="text-gray-700 text-sm">They'll assess the lock type and determine the best approach</p>
+                    <p className="text-gray-700 text-sm">They&apos;ll assess the lock type and determine the best approach</p>
                   </div>
                 </div>
                 
@@ -372,7 +372,7 @@ export default function CarLockoutArticle() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Recommendations</h3>
-                    <p className="text-gray-700 text-sm">You'll receive advice on preventing future lockouts and improving security</p>
+                    <p className="text-gray-700 text-sm">You&apos;ll receive advice on preventing future lockouts and improving security</p>
                   </div>
                 </div>
               </div>
@@ -429,7 +429,7 @@ export default function CarLockoutArticle() {
               
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Remember, professional automotive locksmiths are available 24/7 to help with emergency car lockouts. 
-                Don't hesitate to call for assistance when you need it most.
+                Don&apos;t hesitate to call for assistance when you need it most.
               </p>
               
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
@@ -462,8 +462,8 @@ export default function CarLockoutArticle() {
               href="/blog/emergency-lockout-what-to-do"
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200"
             >
-              <h3 className="font-semibold text-gray-900 mb-2">Emergency Lockout? Here's What to Do</h3>
-              <p className="text-gray-600 text-sm">Find yourself locked out? Don't panic! Learn the essential steps...</p>
+              <h3 className="font-semibold text-gray-900 mb-2">Emergency Lockout? Here&apos;s What to Do</h3>
+              <p className="text-gray-600 text-sm">Find yourself locked out? Don&apos;t panic! Learn the essential steps...</p>
             </Link>
             
             <Link 

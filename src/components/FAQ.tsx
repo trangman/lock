@@ -1,7 +1,6 @@
 'use client';
-import { useState, lazy, Suspense } from 'react';
+import { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
-import LoadingSpinner from './LoadingSpinner';
 
 interface FAQItem {
   question: string;
@@ -95,7 +94,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Get quick answers to common questions about our locksmith services. Can't find what you're looking for? Call us anytime for immediate assistance.
+            Get quick answers to common questions about our locksmith services. Can&apos;t find what you&apos;re looking for? Call us anytime for immediate assistance.
           </p>
         </div>
 
@@ -179,7 +178,7 @@ export default function FAQ() {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">
-            Still have questions? We're here to help 24/7
+            Still have questions? We&apos;re here to help 24/7
           </p>
           <a
             href={`tel:${process.env.NEXT_PUBLIC_EMERGENCY_PHONE || '0800-123-4567'}`}

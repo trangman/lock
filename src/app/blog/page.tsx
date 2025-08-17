@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { LockClosedIcon, KeyIcon, ShieldCheckIcon, HomeIcon, CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
 

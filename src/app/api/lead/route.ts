@@ -81,8 +81,8 @@ export async function POST(req: NextRequest) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
       signal: controller.signal,
-    }).catch((err) => {
-      return new Response(String(err), { status: 500 });
+    }).catch(() => {
+      return new Response('Request failed', { status: 500 });
     });
 
     clearTimeout(timeout);
@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
     }
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  } catch (e) {
+  } catch {
     return new Response(JSON.stringify({ ok: false, error: 'Invalid request' }), { status: 400 });
   }
 }

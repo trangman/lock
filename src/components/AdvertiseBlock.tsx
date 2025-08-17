@@ -1,14 +1,10 @@
 'use client';
 import { useState } from 'react';
-import { siteConfig } from '@/config/site';
 import { MegaphoneIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export default function AdvertiseBlock({ city }: { city?: string }) {
-  const { advertise } = siteConfig.leadGen;
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  if (!advertise?.enabled) return null;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,7 +36,7 @@ export default function AdvertiseBlock({ city }: { city?: string }) {
     }
   }
 
-  const gumroad = siteConfig.leadGen.advertise.gumroad;
+
 
   return (
     <section className="py-10 bg-yellow-50 border border-yellow-200 rounded-xl">
@@ -51,14 +47,15 @@ export default function AdvertiseBlock({ city }: { city?: string }) {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900">
-              {advertise.headline}{city ? ` in ${city}` : ''}
+              Advertise Your Business{city ? ` in ${city}` : ''}
             </h3>
-            <p className="text-sm text-gray-700 mt-1">{advertise.subheadline}</p>
-            <p className="text-sm text-gray-800 mt-1 font-medium">{advertise.pricingNote}</p>
+            <p className="text-sm text-gray-700 mt-1">Get featured on our locksmith directory and reach more customers</p>
+            <p className="text-sm text-gray-800 mt-1 font-medium">Competitive pricing for local businesses</p>
             <ul className="mt-3 text-sm text-gray-700 list-disc ml-5">
-              {advertise.benefits.map((b, i) => (
-                <li key={i}>{b}</li>
-              ))}
+              <li>Featured placement on city pages</li>
+              <li>Direct contact from potential customers</li>
+              <li>Professional business listing</li>
+              <li>Local SEO benefits</li>
             </ul>
           </div>
         </div>
@@ -93,28 +90,7 @@ export default function AdvertiseBlock({ city }: { city?: string }) {
                 {loading ? 'Sending…' : 'Get ad info'}
               </button>
             </form>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {gumroad?.citySponsorshipUrl && (
-                <a
-                  href={gumroad.citySponsorshipUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg border border-yellow-300 text-yellow-800 hover:bg-yellow-100 font-semibold"
-                >
-                  Buy city sponsorship on Gumroad
-                </a>
-              )}
-              {gumroad?.featuredListingUrl && (
-                <a
-                  href={gumroad.featuredListingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg border border-yellow-300 text-yellow-800 hover:bg-yellow-100 font-semibold"
-                >
-                  Buy featured listing on Gumroad
-                </a>
-              )}
-            </div>
+
           </>
         ) : (
           <div className="mt-6 flex items-center text-green-700 gap-2">

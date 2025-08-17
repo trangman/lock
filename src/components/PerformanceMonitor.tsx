@@ -2,6 +2,41 @@
 
 import { useEffect } from 'react';
 
+// Placeholder gtag function for development
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
+// Define placeholder gtag function if not available
+const gtag = typeof window !== 'undefined' && window.gtag ? window.gtag : (...args: unknown[]) => {
+  console.log('gtag placeholder:', args);
+};
+
+// Performance entry interfaces for specific types
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
+}
+
+interface LayoutShiftEntry extends PerformanceEntry {
+  hadRecentInput: boolean;
+  value: number;
+}
+
+interface InteractionEntry extends PerformanceEntry {
+  processingEnd: number;
+  startTime: number;
+}
+
+// Memory interface for Chrome performance.memory
+interface PerformanceMemory {
+  usedJSHeapSize: number;
+  totalJSHeapSize: number;
+  jsHeapSizeLimit: number;
+}
+
 export default function PerformanceMonitor() {
   useEffect(() => {
     // Only run in browser
@@ -39,8 +74,9 @@ export default function PerformanceMonitor() {
         try {
           const fidObserver = new PerformanceObserver((entryList) => {
             const entries = entryList.getEntries();
-            entries.forEach((entry: any) => {
-              const fid = entry.processingStart - entry.startTime;
+            entries.forEach((entry: PerformanceEntry) => {
+              const fidEntry = entry as FirstInputEntry;
+              const fid = fidEntry.processingStart - fidEntry.startTime;
               console.log('FID:', fid);
               
               if (typeof gtag !== 'undefined') {
@@ -63,9 +99,10 @@ export default function PerformanceMonitor() {
           const clsObserver = new PerformanceObserver((entryList) => {
             let clsValue = 0;
             const entries = entryList.getEntries();
-            entries.forEach((entry: any) => {
-              if (!entry.hadRecentInput) {
-                clsValue += entry.value;
+            entries.forEach((entry: PerformanceEntry) => {
+              const clsEntry = entry as LayoutShiftEntry;
+              if (!clsEntry.hadRecentInput) {
+                clsValue += clsEntry.value;
               }
             });
             console.log('CLS:', clsValue);
@@ -88,8 +125,9 @@ export default function PerformanceMonitor() {
         try {
           const inpObserver = new PerformanceObserver((entryList) => {
             const entries = entryList.getEntries();
-            entries.forEach((entry: any) => {
-              const inp = entry.processingEnd - entry.startTime;
+            entries.forEach((entry: PerformanceEntry) => {
+              const inpEntry = entry as InteractionEntry;
+              const inp = inpEntry.processingEnd - inpEntry.startTime;
               console.log('INP:', inp);
               
               if (typeof gtag !== 'undefined') {
@@ -114,15 +152,15 @@ export default function PerformanceMonitor() {
       if ('performance' in window) {
         const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
         if (navigation) {
-          const metrics = {
-            dns: navigation.domainLookupEnd - navigation.domainLookupStart,
-            tcp: navigation.connectEnd - navigation.connectStart,
-            ttfb: navigation.responseStart - navigation.requestStart,
-            domContentLoaded: navigation.domContentLoadedEventEnd - navigation.navigationStart,
-            loadComplete: navigation.loadEventEnd - navigation.navigationStart,
-            firstPaint: 0,
-            firstContentfulPaint: 0,
-          };
+                     const metrics = {
+             dns: navigation.domainLookupEnd - navigation.domainLookupStart,
+             tcp: navigation.connectEnd - navigation.connectStart,
+             ttfb: navigation.responseStart - navigation.requestStart,
+             domContentLoaded: navigation.domContentLoadedEventEnd - navigation.fetchStart,
+             loadComplete: navigation.loadEventEnd - navigation.fetchStart,
+             firstPaint: 0,
+             firstContentfulPaint: 0,
+           };
           
           // Get paint timing
           const paintEntries = performance.getEntriesByType('paint');
@@ -157,32 +195,36 @@ export default function PerformanceMonitor() {
 
     // Track resource loading performance
     const trackResources = () => {
-      if ('performance' in window) {
-        const resources = performance.getEntriesByType('resource');
-        const slowResources = resources.filter((resource: any) => resource.duration > 1000);
-        
-        if (slowResources.length > 0) {
-          console.log('Slow Resources:', slowResources);
-          
-          // Send to analytics service here
-          if (typeof gtag !== 'undefined') {
-            gtag('event', 'slow_resources', {
-              event_category: 'Performance',
-              event_label: 'Slow Resources',
-              value: slowResources.length,
-              custom_parameters: {
-                resources: slowResources.map((r: any) => r.name).join(','),
-              },
-            });
-          }
-        }
+             if ('performance' in window) {
+         const resources = performance.getEntriesByType('resource');
+         const slowResources = resources
+           .filter((resource): resource is PerformanceResourceTiming => resource.entryType === 'resource')
+           .filter((resource) => resource.duration > 1000);
+         
+         if (slowResources.length > 0) {
+           console.log('Slow Resources:', slowResources);
+           
+           // Send to analytics service here
+           if (typeof gtag !== 'undefined') {
+             gtag('event', 'slow_resources', {
+               event_category: 'Performance',
+               event_label: 'Slow Resources',
+               value: slowResources.length,
+               custom_parameters: {
+                 resources: slowResources.map((r) => r.name).join(','),
+               },
+             });
+           }
+         }
 
-        // Track resource types
-        const resourceTypes = resources.reduce((acc: any, resource: any) => {
-          const type = resource.initiatorType || 'other';
-          acc[type] = (acc[type] || 0) + 1;
-          return acc;
-        }, {});
+         // Track resource types
+         const resourceTypes = resources
+           .filter((resource): resource is PerformanceResourceTiming => resource.entryType === 'resource')
+           .reduce((acc: Record<string, number>, resource) => {
+             const type = resource.initiatorType || 'other';
+             acc[type] = (acc[type] || 0) + 1;
+             return acc;
+           }, {} as Record<string, number>);
 
         console.log('Resource Types:', resourceTypes);
       }
@@ -191,7 +233,7 @@ export default function PerformanceMonitor() {
     // Track memory usage (if available)
     const trackMemory = () => {
       if ('memory' in performance) {
-        const memory = (performance as any).memory;
+        const memory = (performance as Performance & { memory: PerformanceMemory }).memory;
         const memoryInfo = {
           usedJSHeapSize: Math.round(memory.usedJSHeapSize / 1024 / 1024), // MB
           totalJSHeapSize: Math.round(memory.totalJSHeapSize / 1024 / 1024), // MB

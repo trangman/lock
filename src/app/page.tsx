@@ -1,12 +1,9 @@
 'use client';
-import Link from 'next/link';
+
 import Image from 'next/image';
-import { PhoneIcon, ClockIcon, MapPinIcon, ShieldCheckIcon, KeyIcon, LockClosedIcon, HomeIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
-import LiveChat from '@/components/LiveChat';
-import EmergencyCTA from '@/components/EmergencyCTA';
+import { PhoneIcon, HomeIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
 import TrustBadges from '@/components/TrustBadges';
 import LeadCapture from '@/components/LeadCapture';
-import AdvertiseBlock from '@/components/AdvertiseBlock';
 import Header from '@/components/Header';
 import FAQ from '@/components/FAQ';
 import BlogSection from '@/components/BlogSection';
@@ -14,7 +11,7 @@ import { siteConfig } from '@/config/site';
 import { getHeroImage } from '@/config/cities';
 
 export default function Home() {
-  const { company, contact, services, leadGen } = siteConfig;
+  const { company, contact, services } = siteConfig;
 
   return (
     <div className="min-h-screen">

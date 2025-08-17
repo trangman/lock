@@ -225,5 +225,5 @@ export const getCompanyInfo = () => siteConfig.company;
 // Helper function to get services
 export const getServices = () => siteConfig.services;
 
-// Helper function to get trust info
-export const getTrustInfo = () => siteConfig.trust; 
+// Helper function to get professional standards
+export const getProfessionalStandards = () => siteConfig.professionalStandards; 
