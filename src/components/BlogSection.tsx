@@ -91,9 +91,9 @@ export default function BlogSection() {
 
         <div className="text-center mt-12">
           <div className="mb-6">
-            <p className="text-gray-600 mb-4">
-              Need immediate help? <a href="/#services" className="text-blue-600 hover:text-blue-700 underline">View our services</a> or <a href="/#faq-heading" className="text-blue-600 hover:text-blue-700 underline">check our FAQ</a> for quick answers.
-            </p>
+                                  <p className="text-gray-600 mb-4">
+                        Need immediate help? <Link href="/#services" className="text-blue-600 hover:text-blue-700 underline">View our services</Link> or <Link href="/#faq-heading" className="text-blue-600 hover:text-blue-700 underline">check our FAQ</Link> for quick answers.
+                      </p>
           </div>
           <Link 
             href="/blog"

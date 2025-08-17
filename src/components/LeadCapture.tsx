@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 import { PhoneIcon, EnvelopeIcon, UserIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 interface FormData {
@@ -455,12 +456,12 @@ export default function LeadCapture() {
             
             {/* Additional Internal Links */}
             <div className="text-center mt-4">
-              <p className="text-sm text-gray-600 mb-2">
-                Need immediate help? <a href="/#services" className="text-blue-600 hover:text-blue-700 underline">View our services</a> or <a href="/#faq-heading" className="text-blue-600 hover:text-blue-700 underline">check our FAQ</a>.
-              </p>
-              <p className="text-sm text-gray-600">
-                Learn more about <a href="/blog" className="text-blue-600 hover:text-blue-700 underline">home security</a> and <a href="/locksmith" className="text-blue-600 hover:text-blue-700 underline">our service areas</a>.
-              </p>
+                                    <p className="text-sm text-gray-600 mb-2">
+                        Need immediate help? <Link href="/#services" className="text-blue-600 hover:text-blue-700 underline">View our services</Link> or <Link href="/#faq-heading" className="text-blue-600 hover:text-blue-700 underline">check our FAQ</Link>.
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        Learn more about <Link href="/blog" className="text-blue-600 hover:text-blue-700 underline">home security</Link> and <Link href="/locksmith" className="text-blue-600 hover:text-blue-700 underline">our service areas</Link>.
+                      </p>
             </div>
           </form>
         </div>

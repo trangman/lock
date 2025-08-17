@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { LockClosedIcon, KeyIcon, ShieldCheckIcon, HomeIcon, CalendarIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
@@ -209,9 +210,11 @@ export default function BlogPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="md:flex">
                 <div className="md:w-1/3 bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <img 
+                  <Image 
                     src="/img/emergency-lockout.webp" 
                     alt="Emergency Lockout Services" 
+                    width={400}
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                 </div>

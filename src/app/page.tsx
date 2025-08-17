@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { PhoneIcon, HomeIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
 import TrustBadges from '@/components/TrustBadges';
 import LeadCapture from '@/components/LeadCapture';
@@ -338,9 +339,9 @@ export default function Home() {
                 <p className="text-gray-600 mb-4 text-sm">
                   Direct links to local police force websites and community safety information.
                 </p>
-                <a href="/locksmith" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
-                  View Local Police Resources →
-                </a>
+                                            <Link href="/locksmith" className="text-blue-600 hover:text-blue-700 text-sm font-medium underline">
+                              View Local Police Resources →
+                            </Link>
               </div>
               
               <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
