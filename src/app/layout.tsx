@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.seo.author }],
   creator: siteConfig.seo.author,
   publisher: siteConfig.seo.author,
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,

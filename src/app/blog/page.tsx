@@ -208,8 +208,12 @@ export default function BlogPage() {
             
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="md:flex">
-                <div className="md:w-1/3 bg-gradient-to-br from-blue-600 to-blue-800 p-8 flex items-center justify-center">
-                  <featuredPost.icon className="h-24 w-24 text-white opacity-80" />
+                <div className="md:w-1/3 bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/img/emergency-lockout.webp" 
+                    alt="Emergency Lockout Services" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="md:w-2/3 p-8">
                   <div className="flex items-center mb-4">
