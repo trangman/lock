@@ -119,25 +119,33 @@ export default function TrustBadges() {
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* Professional Standards */}
         <div className="mt-12 text-center">
-          <h3 className="text-lg font-semibold text-gray-900 mb-6">Our Certifications</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+          <h3 className="text-lg font-semibold text-gray-900 mb-6">Professional Standards</h3>
+          <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-              <p className="text-xs text-gray-600">DBS Checked</p>
+              <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                <ShieldCheckIcon className="h-8 w-8 text-blue-600" />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Professional Service</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-              <p className="text-xs text-gray-600">Guild of Locksmiths</p>
+              <div className="w-16 h-16 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                <CheckBadgeIcon className="h-8 w-8 text-green-600" />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Quality Assured</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-              <p className="text-xs text-gray-600">Public Liability Insurance</p>
+              <div className="w-16 h-16 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                <StarIcon className="h-8 w-8 text-purple-600" />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Customer Focused</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-              <p className="text-xs text-gray-600">Trading Standards</p>
+              <div className="w-16 h-16 bg-orange-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                <ClockIcon className="h-8 w-8 text-orange-600" />
+              </div>
+              <p className="text-sm font-medium text-gray-700">Reliable Service</p>
             </div>
           </div>
         </div>

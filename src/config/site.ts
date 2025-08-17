@@ -142,11 +142,11 @@ export const siteConfig = {
         color: "purple"
       }
     ],
-    certifications: [
-      "DBS Checked",
-      "Guild of Locksmiths", 
-      "Public Liability Insurance",
-      "Trading Standards"
+    professionalStandards: [
+      "Professional Service",
+      "Quality Assured", 
+      "Customer Focused",
+      "Reliable Service"
     ],
     testimonials: [
       {
