@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
+  reactStrictMode: true,
   
   // Experimental features for performance
       experimental: {
@@ -67,6 +68,14 @@ const nextConfig: NextConfig = {
       {
         source: '/(.*)',
         headers: [
+          {
+            key: 'Accept-Encoding',
+            value: 'gzip, deflate, br',
+          },
+          {
+            key: 'Vary',
+            value: 'Accept-Encoding',
+          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
