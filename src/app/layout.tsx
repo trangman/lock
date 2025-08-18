@@ -5,6 +5,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -135,6 +136,7 @@ export default function RootLayout({
         
         <div className="min-h-screen bg-gray-50">
           {children}
+          <Footer />
         </div>
       </body>
     </html>

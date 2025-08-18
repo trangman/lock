@@ -69,12 +69,8 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Accept-Encoding',
-            value: 'gzip, deflate, br',
-          },
-          {
-            key: 'Vary',
-            value: 'Accept-Encoding',
+            key: 'Content-Type',
+            value: 'text/html; charset=utf-8',
           },
           {
             key: 'X-Content-Type-Options',
@@ -108,6 +104,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Content-Type',
+            value: 'text/html; charset=utf-8',
           },
         ],
       },
@@ -153,6 +153,32 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400',
+          },
+        ],
+      },
+      {
+        source: '/locksmith/(.*)',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/html; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600',
+          },
+        ],
+      },
+      {
+        source: '/blog/(.*)',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/html; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600',
           },
         ],
       },
