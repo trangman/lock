@@ -18,15 +18,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "accelerometer=(), camera=(), geolocation=(self), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
 
-[[headers]]
-  for = "/locksmith/*"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
 
-[[headers]]
-  for = "/blog/*"
-  [headers.values]
-    Content-Type = "text/html; charset=utf-8"
 
 [context.deploy-preview]
   [[context.deploy-preview.headers]]

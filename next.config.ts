@@ -69,10 +69,6 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'text/html; charset=utf-8',
-          },
-          {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
@@ -104,10 +100,6 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'Content-Type',
-            value: 'text/html; charset=utf-8',
           },
         ],
       },
@@ -160,10 +152,6 @@ const nextConfig: NextConfig = {
         source: '/locksmith/(.*)',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'text/html; charset=utf-8',
-          },
-          {
             key: 'Cache-Control',
             value: 'public, max-age=3600',
           },
@@ -172,10 +160,6 @@ const nextConfig: NextConfig = {
       {
         source: '/blog/(.*)',
         headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/html; charset=utf-8',
-          },
           {
             key: 'Cache-Control',
             value: 'public, max-age=3600',
