@@ -2,8 +2,9 @@
   command = "npm run build"
   publish = ".next"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Temporarily disabled to test routing
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
 
 [context.production.environment]
   NEXT_PUBLIC_SITE_URL = "https://www.locksmithyorkshire.co.uk"
@@ -25,15 +26,16 @@
     [context.deploy-preview.headers.values]
       X-Robots-Tag = "noindex, nofollow"
 
+# Only redirect HTTP to HTTPS, not all URLs
 [[redirects]]
-  from = "http://locksmithyorkshire.co.uk/*"
-  to   = "https://www.locksmithyorkshire.co.uk/:splat"
+  from = "http://locksmithyorkshire.co.uk"
+  to   = "https://www.locksmithyorkshire.co.uk"
   status = 301
   force = true
 
 [[redirects]]
-  from = "http://www.locksmithyorkshire.co.uk/*"
-  to   = "https://www.locksmithyorkshire.co.uk/:splat"
+  from = "http://www.locksmithyorkshire.co.uk"
+  to   = "https://www.locksmithyorkshire.co.uk"
   status = 301
   force = true
 
