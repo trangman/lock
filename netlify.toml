@@ -2,45 +2,10 @@
   command = "npm run build"
   publish = ".next"
 
-# Ensure proper Next.js handling
-[build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
-
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [context.production.environment]
-  NEXT_PUBLIC_SITE_URL = "https://www.locksmithyorkshire.co.uk"
   NODE_VERSION = "20"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "accelerometer=(), camera=(), geolocation=(self), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
-
-
-
-[context.deploy-preview]
-  [[context.deploy-preview.headers]]
-    for = "/*"
-    [context.deploy-preview.headers.values]
-      X-Robots-Tag = "noindex, nofollow"
-
-# Only redirect HTTP to HTTPS, not all URLs
-[[redirects]]
-  from = "http://locksmithyorkshire.co.uk"
-  to   = "https://www.locksmithyorkshire.co.uk"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "http://www.locksmithyorkshire.co.uk"
-  to   = "https://www.locksmithyorkshire.co.uk"
-  status = 301
-  force = true
 
 
