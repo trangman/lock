@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PhoneIcon, HomeIcon, KeyIcon, ShieldCheckIcon, ClockIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, HomeIcon, KeyIcon, ClockIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import Header from '@/components/Header';
 import { siteConfig } from '@/config/site';
 

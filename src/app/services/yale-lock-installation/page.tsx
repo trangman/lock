@@ -230,7 +230,7 @@ export default function YaleLockInstallationPage() {
                     <CheckCircleIcon className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Trusted Brand Heritage</h3>
-                      <p className="text-gray-600">Yale has been the world's favourite lock brand for over 180 years, trusted by millions worldwide.</p>
+                      <p className="text-gray-600">Yale has been the world&apos;s favourite lock brand for over 180 years, trusted by millions worldwide.</p>
                     </div>
                   </div>
                   <div className="flex items-start">

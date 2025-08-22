@@ -116,13 +116,13 @@ export default function UPVCDoorLockRepairPage() {
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
                   <HomeIcon className="h-6 w-6 text-red-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Door Won't Lock or Unlock</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Door Won&apos;t Lock or Unlock</h3>
                 <p className="text-gray-600 mb-4">
                   Multi-point locking mechanism problems causing doors to stick or fail to secure properly.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Handle not lifting properly</li>
-                  <li>• Key won't turn in cylinder</li>
+                  <li>• Key won&apos;t turn in cylinder</li>
                   <li>• Door misaligned with frame</li>
                   <li>• Locking points not engaging</li>
                 </ul>
@@ -189,7 +189,7 @@ export default function UPVCDoorLockRepairPage() {
                   Door handle problems preventing proper operation of UPVC multi-point locking systems.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Handle won't lift or lower</li>
+                  <li>• Handle won&apos;t lift or lower</li>
                   <li>• Loose or wobbly handle</li>
                   <li>• Broken spindle mechanism</li>
                   <li>• Handle spring problems</li>
@@ -203,11 +203,11 @@ export default function UPVCDoorLockRepairPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Emergency UPVC Repairs</h3>
                 <p className="text-gray-600 mb-4">
-                  24/7 emergency UPVC door lock repair service when you're locked out or security is compromised.
+                  24/7 emergency UPVC door lock repair service when you&apos;re locked out or security is compromised.
                 </p>
                 <ul className="text-sm text-gray-600 space-y-1">
                   <li>• Locked out of property</li>
-                  <li>• Door won't close/secure</li>
+                  <li>• Door won&apos;t close/secure</li>
                   <li>• Break-in damage repair</li>
                   <li>• Same-day emergency fixes</li>
                 </ul>
@@ -258,7 +258,7 @@ export default function UPVCDoorLockRepairPage() {
                 <div className="mt-8 p-6 bg-blue-50 rounded-lg">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Yorkshire Weather & UPVC Doors</h3>
                   <p className="text-gray-600 text-sm">
-                    Yorkshire's variable climate is particularly hard on UPVC doors. Our technicians understand how local weather 
+                    Yorkshire&apos;s variable climate is particularly hard on UPVC doors. Our technicians understand how local weather 
                     patterns affect door alignment and locking mechanisms, providing solutions that work year-round in Yorkshire conditions.
                   </p>
                 </div>
@@ -317,9 +317,9 @@ export default function UPVCDoorLockRepairPage() {
                       name="problem"
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
-                      <option>Door won't lock/unlock</option>
+                      <option>Door won&apos;t lock/unlock</option>
                       <option>Handle not working</option>
-                      <option>Key won't turn</option>
+                      <option>Key won&apos;t turn</option>
                       <option>Door sticking</option>
                       <option>Mechanism broken</option>
                       <option>Other problem</option>

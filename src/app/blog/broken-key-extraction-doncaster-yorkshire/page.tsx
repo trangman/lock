@@ -96,7 +96,7 @@ export default function BrokenKeyExtractionPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-600 mb-8 font-medium">
-                A broken key stuck in a lock is one of the most frustrating locksmith emergencies. Whether it's your front door, car, or office lock, a snapped key can leave you stranded and stressed. Our professional broken key extraction service in Doncaster, Yorkshire provides fast, reliable solutions that get you back inside without damaging your locks.
+                A broken key stuck in a lock is one of the most frustrating locksmith emergencies. Whether it&apos;s your front door, car, or office lock, a snapped key can leave you stranded and stressed. Our professional broken key extraction service in Doncaster, Yorkshire provides fast, reliable solutions that get you back inside without damaging your locks.
               </p>
 
               <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">
@@ -196,7 +196,7 @@ export default function BrokenKeyExtractionPage() {
               </h2>
               
               <p className="mb-6">
-                When you call our Doncaster broken key extraction service, here's what you can expect:
+                When you call our Doncaster broken key extraction service, here&apos;s what you can expect:
               </p>
 
               <div className="space-y-6 mb-8">
@@ -267,7 +267,7 @@ export default function BrokenKeyExtractionPage() {
               </h2>
               
               <p className="mb-6">
-                While our broken key extraction service is always available, prevention is better than cure. Here are some tips to avoid key breakage in Doncaster's climate:
+                While our broken key extraction service is always available, prevention is better than cure. Here are some tips to avoid key breakage in Doncaster&apos;s climate:
               </p>
 
               <div className="bg-yellow-50 rounded-lg p-6 mb-8">
