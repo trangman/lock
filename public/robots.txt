@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Geographic targeting for UK/Yorkshire
+# Target country: United Kingdom
+# Target region: Yorkshire
+# Language: English (UK)
+
 # Sitemap
 Sitemap: https://www.locksmithyorkshire.co.uk/sitemap.xml
 

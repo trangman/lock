@@ -98,6 +98,43 @@ export default function Home() {
           }),
         }}
       />
+      
+      {/* Additional Schema for Long-tail Keywords */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Do you provide 24 hour locksmith service in Leeds West Yorkshire?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, we provide 24 hour locksmith services across Leeds West Yorkshire and all of Yorkshire. Our emergency response time is typically 15 minutes or less.'
+                }
+              },
+              {
+                '@type': 'Question', 
+                name: 'Can you help with car lockout service in Sheffield Yorkshire?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Absolutely! We offer professional car lockout service across Sheffield Yorkshire and all South Yorkshire areas with rapid mobile response.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you repair UPVC door locks across Yorkshire?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, we specialize in UPVC door lock repair throughout Yorkshire, including multi-point locking mechanisms and all common UPVC door problems.'
+                }
+              }
+            ]
+          }),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -207,11 +244,11 @@ export default function Home() {
                 id="hero-heading"
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
               >
-                24/7 Emergency Locksmith Services
+                Emergency Locksmith Near Me Yorkshire - 24/7 Service
               </h1>
               <p className="text-xl sm:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-                Professional, licensed, and insured locksmiths across Yorkshire. 
-                Emergency response in 15 minutes or less.
+                Professional 24 hour locksmith Leeds West Yorkshire & across all Yorkshire cities. 
+                Emergency lockout service in 15 minutes - licensed, insured, trusted.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -271,10 +308,20 @@ export default function Home() {
                       {key === 'keycutting' && <KeyIcon className="h-8 w-8 text-blue-600" aria-hidden="true" />}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {service.name}
+                      {key === 'emergency' ? 'Emergency Locksmith Near Me Yorkshire' : 
+                       key === 'automotive' ? 'Car Lockout Service Sheffield Yorkshire' :
+                       key === 'residential' ? 'UPVC Door Lock Repair Yorkshire' :
+                       key === 'commercial' ? 'Commercial Locksmith Services Hull Yorkshire' :
+                       key === 'security' ? 'Smart Lock Fitting York North Yorkshire' :
+                       service.name}
                     </h3>
                     <p className="text-gray-600 mb-4">
-                      {service.description}
+                      {key === 'emergency' ? '24 hour locksmith Leeds West Yorkshire and emergency locksmith response across all Yorkshire cities' :
+                       key === 'automotive' ? 'Professional car lockout service Sheffield Yorkshire, broken key extraction Doncaster Yorkshire and automotive locksmith solutions' :
+                       key === 'residential' ? 'UPVC door lock repair Yorkshire, lock change service Bradford Yorkshire, and residential security solutions' :
+                       key === 'commercial' ? 'Commercial locksmith services Hull Yorkshire, business security, and access control systems for Yorkshire companies' :
+                       key === 'security' ? 'Smart lock fitting York North Yorkshire, Yale lock installation Wakefield Yorkshire, and modern security systems' :
+                       service.description}
                     </p>
                     <div className="text-sm text-gray-500 space-y-1">
                       <p><strong>Response:</strong> {service.response}</p>

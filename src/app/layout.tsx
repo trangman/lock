@@ -70,6 +70,7 @@ export const metadata: Metadata = {
     canonical: "https://www.locksmithyorkshire.co.uk/",
     languages: {
       'en-GB': 'https://www.locksmithyorkshire.co.uk/',
+      'en': 'https://www.locksmithyorkshire.co.uk/',
     },
   },
   manifest: '/manifest.json',
@@ -89,6 +90,10 @@ export const metadata: Metadata = {
     'google-site-verification': 'your-verification-code-here',
     'msvalidate.01': 'your-bing-verification-code-here',
     'yandex-verification': 'your-yandex-verification-code-here',
+    'geo.region': 'GB',
+    'geo.placename': 'Yorkshire',
+    'geo.position': '53.8008;-1.5491',
+    'ICBM': '53.8008, -1.5491',
   },
 
 };
@@ -101,6 +106,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Geographic Targeting */}
+        <link rel="alternate" hrefLang="en-GB" href="https://www.locksmithyorkshire.co.uk/" />
+        <link rel="alternate" hrefLang="en" href="https://www.locksmithyorkshire.co.uk/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.locksmithyorkshire.co.uk/" />
+        
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"

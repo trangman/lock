@@ -146,6 +146,30 @@ export default function Header() {
                   >
                     Commercial Locksmith
                   </Link>
+                  <Link
+                    href="/services/upvc-door-lock-repair"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    UPVC Lock Repair
+                  </Link>
+                  <Link
+                    href="/services/yale-lock-installation"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Yale Lock Installation
+                  </Link>
+                  <Link
+                    href="/services/landlord-lock-change"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+                    role="menuitem"
+                    onClick={() => setIsDropdownOpen(false)}
+                  >
+                    Landlord Services
+                  </Link>
                 </div>
               )}
             </div>

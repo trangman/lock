@@ -74,9 +74,9 @@ export const yorkshireCities: CityData[] = [
     landmarks: ["Leeds Train Station", "University of Leeds", "Leeds General Infirmary", "Briggate Shopping Street", "Roundhay Park", "Headingley Stadium", "Leeds Arena", "Royal Armouries", "Kirkstall Abbey", "Trinity Shopping Centre"],
     neighborhoods: ["City Centre", "Headingley", "Hyde Park", "Kirkstall", "Roundhay", "Chapel Allerton", "Harehills", "Armley", "Beeston", "Holbeck", "Meanwood", "Adel"],
     seo: {
-      title: "Emergency Locksmith Leeds - 24/7 Lockout Service | Locksmith Yorkshire",
-      description: "Professional locksmith services in Leeds covering all LS postcodes. 24/7 emergency lockout, UPVC repairs, student housing security. Fast response across Leeds city centre, Headingley, Hyde Park. Licensed and insured.",
-      keywords: "locksmith leeds, emergency locksmith leeds, locksmith leeds city centre, residential locksmith leeds, commercial locksmith leeds, locksmith headingley, locksmith hyde park, UPVC door repairs leeds, student housing security leeds, locksmith LS1 LS2 LS3 LS4 LS5 LS6",
+      title: "24 Hour Locksmith Leeds West Yorkshire - Emergency Locksmith Near Me | Locksmith Yorkshire",
+      description: "24 hour locksmith Leeds West Yorkshire ✓ Emergency locksmith near me ✓ UPVC door lock repair ✓ Car lockout service ✓ Yale lock installation ✓ Smart lock fitting Leeds. Professional service across all LS postcodes. Licensed, insured, 15min response.",
+      keywords: "24 hour locksmith leeds west yorkshire, emergency locksmith near me leeds, locksmith leeds, emergency locksmith leeds, upvc door lock repair leeds, car lockout service leeds, yale lock installation leeds, smart lock fitting leeds, locksmith leeds city centre, residential locksmith leeds, commercial locksmith leeds, locksmith headingley, locksmith hyde park, student housing security leeds, locksmith LS1 LS2 LS3 LS4 LS5 LS6",
       h1: "Emergency Locksmith Leeds - 24/7 Lockout Service",
       content: [
         "Professional locksmith services in Leeds available 24/7 covering all LS postcodes from LS1 city centre to LS29 Wetherby. Our Leeds locksmith team provides fast emergency response across Headingley, Hyde Park, Chapel Allerton, Roundhay, and all major neighborhoods in Yorkshire's largest city.",
@@ -120,9 +120,9 @@ export const yorkshireCities: CityData[] = [
     landmarks: ["Sheffield Train Station", "University of Sheffield", "Sheffield Hallam University", "Crucible Theatre", "Sheffield Cathedral", "Meadowhall Shopping Centre", "Don Valley Stadium", "Winter Garden", "Millennium Gallery", "Peak District Gateway"],
     neighborhoods: ["City Centre", "Ecclesall", "Hillsborough", "Heeley", "Crookes", "Walkley", "Broomhill", "Nether Edge", "Sharrow", "Kelham Island", "Attercliffe", "Dore"],
     seo: {
-      title: "Emergency Locksmith Sheffield - 24/7 Lockout Service | Locksmith Yorkshire",
-      description: "Professional locksmith services in Sheffield covering all S postcodes. 24/7 emergency lockout, steel city security solutions, student accommodation locks. Fast response across Sheffield city centre, Ecclesall, Hillsborough. Licensed and insured.",
-      keywords: "locksmith sheffield, emergency locksmith sheffield, locksmith sheffield city centre, residential locksmith sheffield, commercial locksmith sheffield, locksmith ecclesall, locksmith hillsborough, steel city locksmith, student locksmith sheffield, locksmith S1 S2 S3 S4 S5 S6 S7 S8",
+      title: "Car Lockout Service Sheffield Yorkshire - Emergency Locksmith Sheffield | Locksmith Yorkshire",
+      description: "Car lockout service Sheffield Yorkshire ✓ Emergency locksmith Sheffield ✓ Automotive locksmith ✓ Vehicle lockout ✓ Key replacement ✓ Steel city security solutions. Professional service across all S postcodes. Licensed, insured, 24/7 response.",
+      keywords: "car lockout service sheffield yorkshire, emergency locksmith sheffield, automotive locksmith sheffield, vehicle lockout sheffield, car key replacement sheffield, locksmith sheffield, locksmith sheffield city centre, residential locksmith sheffield, commercial locksmith sheffield, locksmith ecclesall, locksmith hillsborough, steel city locksmith, student locksmith sheffield, locksmith S1 S2 S3 S4 S5 S6 S7 S8",
       h1: "Emergency Locksmith Sheffield - 24/7 Lockout Service",
       content: [
         "Professional locksmith services in Sheffield, the Steel City, available 24/7 covering all S postcodes from S1 city centre to S36 Oxspring. Our Sheffield locksmith team provides rapid emergency response across Ecclesall, Hillsborough, Broomhill, and all neighborhoods in South Yorkshire's largest city, serving both universities and the diverse residential communities.",

@@ -119,9 +119,9 @@ export const siteConfig = {
 
   // Enhanced SEO & Meta
   seo: {
-    title: "Emergency Locksmith Yorkshire - 24/7 Lockout Service | Professional Locksmith",
-    description: "24/7 emergency locksmith services across Yorkshire. Locked out? We'll be there in 15 minutes! Professional locksmith in Leeds, Sheffield, Bradford, Hull, York. Licensed, insured, trusted by 1000+ customers.",
-    keywords: "emergency locksmith yorkshire, locksmith leeds, locksmith sheffield, locksmith bradford, locksmith hull, locksmith york, emergency lockout service, 24 hour locksmith, car locksmith, house lockout, broken key extraction, locksmith near me, residential locksmith, commercial locksmith, automotive locksmith, security systems, cctv installation, access control, lock repair, key replacement, safe opening, burglar alarm, home security, business security, yorkshire locksmith, professional locksmith, licensed locksmith, insured locksmith, dbs checked locksmith, guild locksmith",
+    title: "Emergency Locksmith Near Me Yorkshire - 24 Hour Locksmith Leeds West Yorkshire",
+    description: "Emergency locksmith near me Yorkshire ✓ 24 hour locksmith Leeds West Yorkshire ✓ Car lockout service Sheffield ✓ UPVC door lock repair ✓ Yale lock installation Wakefield ✓ Commercial locksmith Hull ✓ Landlord lock change service ✓ Smart lock fitting York. Licensed, insured, 15min response.",
+    keywords: "emergency locksmith near me yorkshire, 24 hour locksmith leeds west yorkshire, car lockout service sheffield yorkshire, upvc door lock repair yorkshire, lock change service bradford yorkshire, yale lock installation wakefield yorkshire, broken key extraction doncaster yorkshire, commercial locksmith services hull yorkshire, smart lock fitting york north yorkshire, landlord lock change service yorkshire, emergency locksmith yorkshire, locksmith leeds, locksmith sheffield, locksmith bradford, locksmith hull, locksmith york, emergency lockout service, car locksmith, house lockout, locksmith near me, residential locksmith, commercial locksmith, automotive locksmith, security systems, lock repair, key replacement, yorkshire locksmith, professional locksmith, licensed locksmith, insured locksmith, dbs checked locksmith",
     author: "Locksmith Yorkshire",
     ogTitle: "Emergency Locksmith Yorkshire - 24/7 Lockout Service",
     ogDescription: "24/7 emergency locksmith services across Yorkshire. Locked out? We'll be there in 15 minutes! Professional, licensed, insured locksmith services.",
